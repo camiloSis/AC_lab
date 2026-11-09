@@ -1,0 +1,7 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {subsubsection}{\numberline {0.0.1}Pregunta 1: Decimal a IEEE 754 de precisión simple}{3}{subsubsection.0.0.1}%
+\contentsline {subsubsection}{\numberline {0.0.2}Pregunta 2: IEEE 754 de precisión simple a decimal}{3}{subsubsection.0.0.2}%
+\contentsline {subsubsection}{\numberline {0.0.3}Pregunta 3: Memoria jerárquica}{3}{subsubsection.0.0.3}%
+\contentsline {subsubsection}{\numberline {0.0.4}Pregunta 4: Ejecución de la instrucción \texttt {SW \#2AB}}{4}{subsubsection.0.0.4}%
+\contentsline {subsubsection}{\numberline {0.0.5}Pregunta 5: Franjas horizontales de colores en assembler Intel}{6}{subsubsection.0.0.5}%
+\contentsline {subsubsection}{\numberline {0.0.6}Pregunta 6: Manipulación de bits del registro CX}{7}{subsubsection.0.0.6}%
