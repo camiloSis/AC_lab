@@ -1,91 +1,24 @@
 \documentclass[10pt]{article}
 
-% ---------- IDIOMA Y CODIFICACIÓN ----------
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage[margin=2.5cm]{geometry}
-\usepackage{setspace}
 \usepackage{graphicx}
-\usepackage{listings}
-\usepackage{minted}
 \usepackage{tikz}
-\usetikzlibrary{circuits.logic.US,babel}
-
-% ---------- TABLAS (Actividad 1: identificación de dispositivos) ----------
-\usepackage{booktabs}   % líneas de tabla profesionales (\toprule, \midrule, \bottomrule)
+\usetikzlibrary{babel}
 \usepackage{array}
-\usepackage{ragged2e}
-\usepackage[table]{xcolor} % opcional, para color en encabezado
-\usepackage{tabularx}   % columnas que se ajustan al ancho de página
-\usepackage{longtable}  % tablas que pueden partirse entre páginas (útil si tu tabla de dispositivos es larga)
-\usepackage{caption}    % control de estilo de "Tabla X: ..."
+\usepackage[table]{xcolor}
 \usepackage{float}
-\usepackage{makecell}
-
-% ---------- GLOSARIO (Actividad 2) ----------
-% Enfoque simple con "description", sin necesidad de correr makeglossaries aparte
-% (evita agregar un paso extra a tu pipeline de compilación).
-\usepackage{enumitem}
-\newlist{glosario}{description}{1}
-\setlist[glosario]{
-    font=\normalfont\bfseries,
-    leftmargin=0pt,
-    labelsep=0.5em,
-    itemsep=0.5em
-}
-
-% ---------- Definiciones auxiliares ----------
-\lstdefinestyle{asm}{
-  language={[x86masm]Assembler},
-  basicstyle=\ttfamily\small,
-  keywordstyle=\bfseries,
-  commentstyle=\itshape,
-  numbers=left,
-  numberstyle=\tiny,
-  numbersep=6pt,
-  frame=single,
-  breaklines=true,
-  showstringspaces=false,
-  tabsize=4
-}
-%---- MINTED..----- 
-\providecommand{\porhacer}[1]{%
-  \par\medskip\noindent
-  \fbox{\parbox{0.92\linewidth}{\textbf{POR HACER (borrar este cuadro al terminar):} #1}}%
-  \par\medskip}
-\usepackage{amsmath} 
-\usepackage{tikz}
-\usepackage{xcolor}
-\usepackage{minted}
-\definecolor{bg}{rgb}{0.90,0.91,0.83}
-
-\providecommand{\espacioimagen}[1]{%
-  \fbox{\parbox[c][4.5cm][c]{0.9\linewidth}{\centering\itshape Insertar captura: #1}}}
- 
-% \figuraimagen{archivo.png}{Leyenda}{etiqueta}{descripción del recuadro}
-\providecommand{\figuraimagen}[4]{%
-  \begin{figure}[htbp]
-    \centering
-    \IfFileExists{img/#1}{\includegraphics[width=0.9\linewidth]{img/#1}}{\espacioimagen{#4\\[2pt]{\upshape\small\texttt{img/#1}}}}
-    \caption{#2}\label{#3}
-  \end{figure}}
- 
-
-%      \relleno{Tu texto}    -> muestra tu texto en rojo (útil para ir dejando borradores)
-\newcommand{\relleno}[1][\textbf{[COMPLETAR AQUÍ]}]{\textcolor{red}{#1}}
-% ---------- CONFIGURACIONES PARA ENCABEZADO Y PORTADA ----------
-\usepackage{colortbl}
+\usepackage{fancyhdr}
 \usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
 
-% Definición de colores y columnas personalizadas (usadas en la portada)
 \definecolor{tablebackground}{rgb}{0.8, 0, 0}
 \newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 \newcolumntype{N}{@{}m{0pt}@{}}
-\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
 
-% Variables de datos para la portada y encabezado
+% Datos de portada y encabezado
 \newcommand{\itemEmail}{ccapatinta@unsa.edu.pe}
 \newcommand{\itemStudent}{Camilo B.A. Capatinta Almanza (Teoría grupo B)}
 \newcommand{\itemCourse}{Arq. de computadoras}
@@ -101,27 +34,22 @@
 \newcommand{\itemPracticeNumber}{02}
 \newcommand{\itemTheme}{PARTE II}
 
-% Configuración del encabezado y pie de página (fancyhdr)
-\usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \setlength{\headheight}{40.51407pt}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 
-% Encabezado
 \fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
 \fancyhead[C]{\fontsize{7}{7}\selectfont    \itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
 \fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet.png}}}
 
-% Pie de página
 \fancyfoot[L]{Estudiante Camilo Capatinta}
 \fancyfoot[C]{\itemCourse}
 \fancyfoot[R]{Página \thepage}
 
 \begin{document}
 
-% --- INICIO DE LA PORTADA ---
 	\vspace*{10px}
 	
 	\begin{center}
@@ -412,8 +340,6 @@ Según la secuencia del computador elemental explicada en clase, la instrucción
 \endgroup
  
 La búsqueda realiza dos lecturas de memoria porque cada acceso entrega 8 bits y la instrucción ocupa 16 bits; por ello PC se incrementa dos veces. La dirección $2AB$ se obtiene al decodificar el campo de dirección y el dato fuente se toma de AC. En la fase final se escribe en memoria; si el tamaño del dato almacenado supera los 8 bits, se necesitan transferencias adicionales para los bytes restantes, de acuerdo con el formato y el orden de bytes definidos para el computador. El acumulador no se modifica.
- 
-\textit{Nota:} Se mantienen los nombres MAR, MDR, IR, PC y AC del esquema. La división de la instrucción en sus dos bytes y el posible número de escrituras de datos dependen del formato y del tamaño de palabra usados en el computador explicado en clase.
  
 % ----------------------------------------------------------------------
 \section{Pregunta 5: Franjas horizontales de colores en assembler Intel}
