@@ -4,4 +4,4 @@
 \contentsline {section}{\numberline {3}Pregunta 3: Memoria jerárquica}{3}{section.3}%
 \contentsline {section}{\numberline {4}Pregunta 4: Ejecución de la instrucción \texttt {SW \#2AB}}{5}{section.4}%
 \contentsline {section}{\numberline {5}Pregunta 5: Franjas horizontales de colores en assembler Intel}{6}{section.5}%
-\contentsline {section}{\numberline {6}Pregunta 6: Manipulación de bits del registro CX}{7}{section.6}%
+\contentsline {section}{\numberline {6}Pregunta 6: Manipulación de bits del registro CX}{8}{section.6}%

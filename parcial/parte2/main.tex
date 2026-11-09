@@ -245,9 +245,9 @@ Número dado: $1\ 01100110\ 10100000000000000000000$ (signo, exponente y mantisa
 % ----------------------------------------------------------------------
 \section{Pregunta 3: Memoria jerárquica}
  
-La \textbf{memoria jerárquica} organiza la memoria del computador en varios niveles construidos con tecnologías distintas. Los niveles cercanos al procesador son pequeños, muy rápidos y caros por bit; los niveles lejanos son grandes, lentos y baratos. Como ninguna tecnología es a la vez rápida, barata y de gran capacidad, se combinan para que el sistema se comporte como una memoria grande y casi tan rápida como la más veloz.
+La \textit{memoria jerárquica} organiza la memoria del computador en varios niveles construidos con tecnologías distintas. Los niveles cercanos al procesador son pequeños, muy rápidos y caros por bit; los niveles lejanos son grandes, lentos y baratos. Como ninguna tecnología es a la vez rápida, barata y de gran capacidad, se combinan para que el sistema se comporte como una memoria grande y casi tan rápida como la más veloz.
  
-La jerarquía funciona gracias al \textbf{principio de localidad}:
+La jerarquía funciona gracias al \textit{principio de localidad}:
  
 \begin{itemize}
   \item \textbf{Localidad temporal:} un dato usado recientemente tiende a volver a usarse pronto.
@@ -327,7 +327,7 @@ La instrucción \texttt{SW \#2AB} (\emph{store word}) guarda el contenido del ac
   M[2AB] \leftarrow AC
 \]
  
-Como toda instrucción del computador elemental, se ejecuta en tres fases: búsqueda (\emph{fetch}), decodificación y ejecución. Los elementos que intervienen son:
+Según la secuencia del computador elemental explicada en clase, la instrucción se ejecuta en cuatro fases: búsqueda (\emph{fetch}), decodificación y lectura de operandos, ejecución de la operación y almacenamiento del resultado. Como la instrucción tiene 16 bits y la memoria transfiere 8 bits por acceso, la búsqueda requiere dos lecturas consecutivas. Los elementos que intervienen son:
  
 \begin{itemize}
   \item \textbf{PC (contador de programa):} contiene la dirección de la siguiente instrucción.
@@ -355,17 +355,16 @@ Como toda instrucción del computador elemental, se ejecuta en tres fases: búsq
   \node[font=\footnotesize] at (7.6,0.1) {Memoria $M$};
   \node[draw, rectangle, minimum width=1.6cm, font=\scriptsize] at (7.6,-1.3) {$M[2AB]$};
  
-  \draw[->]  (pc)  -- node[above, etq] {1} (mar);
+  \draw[->]  (pc)  -- node[above, etq] {dirección} (mar);
   \draw[->]  (mar.east) -- node[above, etq] {dirección} (mem.west |- mar.east);
-  \draw[<->] (mdr.east) -- node[above, etq] {2 / 7} (mem.west |- mdr.east);
-  \draw[->]  (mdr) -- node[above, etq] {3} (ir);
-  \draw[->]  (ir.north east) -- node[midway, right, etq] {5} (mar.south west);
-  \draw[->]  (ac)  -- node[right, etq] {6} (mdr);
+  \draw[<->] (mdr.east) -- node[above, etq] {lectura / escritura} (mem.west |- mdr.east);
+  \draw[->]  (mdr) -- node[above, etq] {byte} (ir);
+  \draw[->]  (ir.north east) -- node[midway, right, etq] {campo dir.} (mar.south west);
+  \draw[->]  (ac)  -- node[right, etq] {dato} (mdr);
   \draw[->]  (ir)  -- node[right, etq] {decodifica} (uc);
-  \node[etq] at (0,-0.9) {4: PC$\leftarrow$PC+1};
 \end{tikzpicture}
  
-\small Registros y transferencias que intervienen (los números indican el orden de las micro-operaciones).
+\small Registros y transferencias que intervienen en el ciclo de instrucción.
 \end{minipage}
 \end{center}
  
@@ -376,35 +375,45 @@ Como toda instrucción del computador elemental, se ejecuta en tres fases: búsq
   \hline
   \textbf{Paso} & \textbf{Micro-operación} & \textbf{Qué ocurre} \\
   \hline
-  \multicolumn{3}{|l|}{\textbf{Búsqueda (\emph{fetch})}} \\
+  \multicolumn{3}{|l|}{\textbf{1. Búsqueda de la instrucción (\emph{fetch})}} \\
   \hline
-  1 & $MAR \leftarrow PC$ & La dirección de la instrucción se coloca en MAR. \\
+  1 & $MAR \leftarrow PC$ & Se coloca en MAR la dirección del primer byte de la instrucción. \\
   \hline
-  2 & $MDR \leftarrow M[MAR]$ & Lectura de memoria: la instrucción llega a MDR. \\
+  2 & $MDR \leftarrow M[MAR]$ & La memoria entrega el primer byte (8 bits) a MDR. \\
   \hline
-  3 & $IR \leftarrow MDR$ & La instrucción se guarda en el IR. \\
+  3 & $IR[\text{byte 1}] \leftarrow MDR$ & El primer byte se guarda en la parte correspondiente de IR. \\
   \hline
-  4 & $PC \leftarrow PC + 1$ & El PC apunta a la siguiente instrucción. \\
+  4 & $PC \leftarrow PC + 1$ & PC apunta al segundo byte de la instrucción. \\
   \hline
-  \multicolumn{3}{|l|}{\textbf{Decodificación}} \\
+  5 & $MAR \leftarrow PC$ & Se coloca en MAR la dirección del segundo byte. \\
   \hline
-  -- & Decodificar IR & La UC reconoce el código \texttt{SW} y separa el campo de dirección ($2AB$). \\
+  6 & $MDR \leftarrow M[MAR]$ & La memoria entrega el segundo byte (8 bits) a MDR. \\
   \hline
-  \multicolumn{3}{|l|}{\textbf{Ejecución}} \\
+  7 & $IR[\text{byte 2}] \leftarrow MDR$ & Se completa la instrucción de 16 bits en IR. \\
   \hline
-  5 & $MAR \leftarrow IR[\text{dir}]$ & La dirección de destino ($2AB$) se coloca en MAR. \\
+  8 & $PC \leftarrow PC + 1$ & PC apunta a la instrucción siguiente. \\
   \hline
-  6 & $MDR \leftarrow AC$ & El dato por guardar se coloca en MDR. \\
+  \multicolumn{3}{|l|}{\textbf{2. Decodificación y lectura de operandos}} \\
   \hline
-  7 & $M[MAR] \leftarrow MDR$ & Escritura: queda $M[2AB] = AC$. \\
+  -- & Decodificar IR & La UC reconoce \texttt{SW} y obtiene la dirección $2AB$ del campo de la instrucción. El dato fuente ya está en AC. \\
+  \hline
+  \multicolumn{3}{|l|}{\textbf{3. Ejecución de la operación}} \\
+  \hline
+  9 & $MAR \leftarrow IR[\text{dir}]$ & La dirección de destino ($2AB$) se coloca en MAR. \\
+  \hline
+  10 & $MDR \leftarrow AC$ & El dato (o el byte que corresponda) se coloca en MDR para transferirlo a memoria. \\
+  \hline
+  \multicolumn{3}{|l|}{\textbf{4. Almacenamiento del resultado}} \\
+  \hline
+  11 & $M[MAR] \leftarrow MDR$ & Se activa la escritura y se almacena el dato en la dirección indicada. Si la palabra ocupa más de 8 bits, se repite la transferencia para sus bytes restantes. \\
   \hline
 \end{tabular}
 \end{center}
 \endgroup
  
-Los pasos 1 a 4 son comunes a todas las instrucciones; el paso 4 puede hacerse al mismo tiempo que la lectura de memoria. Al terminar, la posición $2AB$ contiene una copia del acumulador (por ejemplo, si $AC = 5$ entonces $M[2AB] = 5$), el acumulador y las banderas no cambian, y el PC ya apunta a la siguiente instrucción.
+La búsqueda realiza dos lecturas de memoria porque cada acceso entrega 8 bits y la instrucción ocupa 16 bits; por ello PC se incrementa dos veces. La dirección $2AB$ se obtiene al decodificar el campo de dirección y el dato fuente se toma de AC. En la fase final se escribe en memoria; si el tamaño del dato almacenado supera los 8 bits, se necesitan transferencias adicionales para los bytes restantes, de acuerdo con el formato y el orden de bytes definidos para el computador. El acumulador no se modifica.
  
-\porhacer{Compara los nombres de los registros y el formato de instrucción con los apuntes del computador elemental de tu curso. Aquí se usaron MAR y MDR (en algunos apuntes se llaman RDM y RDD, o AR y DR) y se supuso una palabra de instrucción con código de operación y un campo de dirección de 12 bits ($2AB_{16} = 0010\ 1010\ 1011_2$). Si difieren, cambia solo los nombres o el tamaño del campo; la secuencia de micro-operaciones es la misma. Si en clase usaron señales de control, agrégalas en cada paso.}
+\textit{Nota:} Se mantienen los nombres MAR, MDR, IR, PC y AC del esquema. La división de la instrucción en sus dos bytes y el posible número de escrituras de datos dependen del formato y del tamaño de palabra usados en el computador explicado en clase.
  
 % ----------------------------------------------------------------------
 \section{Pregunta 5: Franjas horizontales de colores en assembler Intel}
@@ -441,43 +450,12 @@ Cada franja se dibuja con el carácter de bloque lleno (\texttt{0DBh}) cuyo colo
  
 \textbf{Programa} (\texttt{franjas.asm}):
  
-\begingroup
-\footnotesize
-\noindent\begin{minipage}{\linewidth}
-\begin{verbatim}
-; franjas.asm - 16 franjas horizontales de colores (texto 80x25)
-; Ensamblar: nasm -f bin franjas.asm -o franjas.com
-org 100h
- 
-    mov ax, 0003h       ; modo texto 80x25 (limpia la pantalla)
-    int 10h
- 
-    mov dh, 0           ; DH = fila actual = numero de color (0..15)
-siguiente:
-    mov ah, 02h         ; funcion 02h: posicionar el cursor
-    mov bh, 0           ; pagina de video 0
-    mov dl, 0           ; columna 0 (la fila ya esta en DH)
-    int 10h
- 
-    mov ah, 09h         ; funcion 09h: escribir caracter con atributo
-    mov al, 0DBh        ; caracter de bloque lleno
-    mov bl, dh          ; atributo = color de la franja
-    mov cx, 16          ; 16 repeticiones = ancho de la franja
-    int 10h
- 
-    inc dh              ; siguiente fila y siguiente color
-    cmp dh, 16          ; ya se dibujaron las 16 franjas?
-    jne siguiente
- 
-    mov ah, 00h         ; esperar una tecla para ver el resultado
-    int 16h
- 
-    mov ax, 4C00h       ; terminar el programa
-    int 21h
-\end{verbatim}
-\end{minipage}
-\par\medskip
-\endgroup
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{img/franjasASM.png}
+    \caption{Franjas.asm en EMU8086}
+    \label{fig: franjas.asm}
+\end{figure}
  
 \textbf{Funcionamiento.}
  
@@ -491,8 +469,12 @@ siguiente:
  
 Se usa el color de primer plano porque funciona igual en cualquier entorno; los colores de fondo 8 a 15 dependen de si el modo de parpadeo del texto está activado.
  
-\porhacer{Ensambla (\texttt{nasm -f bin franjas.asm -o franjas.com}), ejecuta \texttt{franjas.com} en DOSBox y toma una captura de pantalla para adjuntarla aquí. Comprueba que se vean las 16 filas en el mismo orden que la imagen del enunciado. El programa se probó en un emulador de 16 bits y dibuja las 16 filas con los colores 0 a 15, pero no se pudo ver en DOSBox ni en EMU8086 desde aquí.}
- 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{img/franjasCOM.png}
+    \caption{Ejecución de Franjas.asm en EMU8086}
+    \label{fig: franjas.com}
+\end{figure}
 % ----------------------------------------------------------------------
 \section{Pregunta 6: Manipulación de bits del registro CX}
  
@@ -522,36 +504,12 @@ Las tres operaciones afectan a bits distintos, por lo que el orden en que se apl
  
 \textbf{Programa} (\texttt{bits.asm}), con el dato de ejemplo del enunciado ($CX = 00B1h$, es decir, $1011\ 0001_2$ en D7 a D0):
  
-\begingroup
-\footnotesize
-\noindent\begin{minipage}{\linewidth}
-\begin{verbatim}
-; bits.asm - manipulacion de bits del registro CX
-; Ensamblar: nasm -f bin bits.asm -o bits.com
-org 100h
- 
-    mov cx, 00B1h       ; dato de ejemplo: D7..D0 = 1011 0001
-    xor cx, 002Ah       ; invierte D5, D3 y D1      (0010 1010)
-    and cx, 0FFABh      ; borra D6, D4 y D2         (1010 1011)
-    or  cx, 0081h       ; pone en 1 D7 y D0         (1000 0001)
- 
-    ; --- mostrar el byte bajo de CX en binario (opcional) ---
-    mov bx, 8           ; 8 bits por imprimir
-imprimir:
-    rol cl, 1           ; el bit D7 pasa al acarreo (CF)
-    mov dl, '0'
-    adc dl, 0           ; DL = '0' + CF  ->  '0' o '1'
-    mov ah, 02h         ; imprimir el caracter que esta en DL
-    int 21h
-    dec bx
-    jnz imprimir
- 
-    mov ax, 4C00h       ; terminar el programa
-    int 21h
-\end{verbatim}
-\end{minipage}
-\par\medskip
-\endgroup
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{img/bitsASM.png}
+    \caption{bits.asm en EMU8086}
+    \label{fig: bits.asm}
+\end{figure}
  
 Las cuatro primeras instrucciones son la solución; el bloque \texttt{imprimir} solo sirve para ver el resultado en DOSBox, donde no hay ventana de registros.
  
@@ -580,8 +538,11 @@ Las cuatro primeras instrucciones son la solución; el bloque \texttt{imprimir} 
 En este ejemplo el \texttt{OR} no cambia el valor porque D7 y D0 ya estaban en 1.
  
 \textbf{Respuesta:} el resultado es $CX = 008Bh$, es decir, $1000\ 1011_2$ en D7 a D0. Para cualquier otro dato el byte alto no cambia; por ejemplo, $CX = 1234h$ queda en $128Bh$.
- 
-\porhacer{Ensambla (\texttt{nasm -f bin bits.asm -o bits.com}), ejecuta \texttt{bits.com} en DOSBox y verifica que imprime \texttt{10001011}; agrega la captura. El programa se probó en un emulador de 16 bits y da ese resultado, pero no se pudo ejecutar en DOSBox desde aquí.}
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{img/bitsCOM.png}
+    \caption{Ejecución de bits.asm en EMU8086}
+    \label{fig: bits.com}
+\end{figure}
 
 \end{document}

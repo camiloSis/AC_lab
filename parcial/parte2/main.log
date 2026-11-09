@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.18)  8 NOV 2026 20:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.18)  8 NOV 2026 21:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -856,41 +856,79 @@ Package pdftex.def Info: img/logo_abet.png  used on input line 328.
  [4]
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 408.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 411.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 408.
+Package pdftex.def Info: img/logo_abet.png  used on input line 411.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [5]
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 487.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 448.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 487.
+Package pdftex.def Info: img/logo_abet.png  used on input line 448.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [6]
+<img/franjasASM.png, id=92, 587.94656pt x 448.67625pt>
+File: img/franjasASM.png Graphic file (type png)
+<use img/franjasASM.png>
+Package pdftex.def Info: img/franjasASM.png  used on input line 455.
+(pdftex.def)             Requested size: 405.94714pt x 309.78549pt.
+<img/franjasCOM.png, id=93, 629.35126pt x 337.26pt>
+File: img/franjasCOM.png Graphic file (type png)
+<use img/franjasCOM.png>
+Package pdftex.def Info: img/franjasCOM.png  used on input line 474.
+(pdftex.def)             Requested size: 405.94714pt x 217.53874pt.
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 577.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 479.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 577.
+Package pdftex.def Info: img/logo_abet.png  used on input line 479.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [7]
+ [7 <./img/franjasASM.png>]
+<img/bitsASM.png, id=101, 500.62032pt x 355.3275pt>
+File: img/bitsASM.png Graphic file (type png)
+<use img/bitsASM.png>
+Package pdftex.def Info: img/bitsASM.png  used on input line 509.
+(pdftex.def)             Requested size: 405.94714pt x 288.14441pt.
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 587.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 513.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 587.
+Package pdftex.def Info: img/logo_abet.png  used on input line 513.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [8]
-runsystem(latexminted cleantemp  --timestamp 20261108204003 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+ [8 <./img/franjasCOM.png>]
+<img/bitsCOM.png, id=108, 691.83469pt x 338.01282pt>
+File: img/bitsCOM.png Graphic file (type png)
+<use img/bitsCOM.png>
+Package pdftex.def Info: img/bitsCOM.png  used on input line 543.
+(pdftex.def)             Requested size: 405.94714pt x 198.33755pt.
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 547.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 547.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+ [9 <./img/bitsASM.png>]
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 548.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 548.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+ [10 <./img/bitsCOM.png>]
+runsystem(latexminted cleantemp  --timestamp 20261108210101 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
 
  (./main.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -904,18 +942,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 21EF7B2A7C303166C5E50926E3AE21B4;1837.
  ) 
 Here is how much of TeX's memory you used:
- 30886 strings out of 467356
- 617480 string characters out of 5418691
- 1158759 words of memory out of 6000000
- 59480 multiletter control sequences out of 15000+600000
- 635408 words of font info for 68 fonts, out of 8000000 for 9000
+ 30926 strings out of 467356
+ 618321 string characters out of 5418691
+ 1157992 words of memory out of 6000000
+ 59515 multiletter control sequences out of 15000+600000
+ 635240 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,17n,104p,617b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (8 pages, 312642 bytes).
+ 86i,17n,104p,630b,769s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (10 pages, 618765 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
