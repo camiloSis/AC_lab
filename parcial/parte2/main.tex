@@ -180,7 +180,7 @@
 \thispagestyle{plain}
 \clearpage
 
-\subsubsection{Pregunta 1: Decimal a IEEE 754 de precisión simple}
+\section{Pregunta 1: Decimal a IEEE 754 de precisión simple}
  
 Se representa $13.15625_{10}$ en el formato IEEE 754 de precisión simple (32 bits: 1 bit de signo, 8 bits de exponente con sesgo 127 y 23 bits de mantisa).
  
@@ -226,7 +226,7 @@ Se representa $13.15625_{10}$ en el formato IEEE 754 de precisión simple (32 bi
 \textbf{Comprobación:} $1.10100101_2 = 1 + \tfrac{1}{2} + \tfrac{1}{8} + \tfrac{1}{64} + \tfrac{1}{256} = 1.64453125$ y $1.64453125 \times 2^{3} = 13.15625$.
  
 % ----------------------------------------------------------------------
-\subsubsection{Pregunta 2: IEEE 754 de precisión simple a decimal}
+\section{Pregunta 2: IEEE 754 de precisión simple a decimal}
  
 Número dado: $1\ 01100110\ 10100000000000000000000$ (signo, exponente y mantisa).
  
@@ -243,7 +243,7 @@ Número dado: $1\ 01100110\ 10100000000000000000000$ (signo, exponente y mantisa
 \textbf{Respuesta:} $N \approx -4.8429 \times 10^{-8}$ (en hexadecimal, $B3500000_{16}$).
  
 % ----------------------------------------------------------------------
-\subsubsection{Pregunta 3: Memoria jerárquica}
+\section{Pregunta 3: Memoria jerárquica}
  
 La \textbf{memoria jerárquica} organiza la memoria del computador en varios niveles construidos con tecnologías distintas. Los niveles cercanos al procesador son pequeños, muy rápidos y caros por bit; los niveles lejanos son grandes, lentos y baratos. Como ninguna tecnología es a la vez rápida, barata y de gran capacidad, se combinan para que el sistema se comporte como una memoria grande y casi tan rápida como la más veloz.
  
@@ -320,7 +320,7 @@ Valores típicos y orientativos (S.O. = sistema operativo).
 Al bajar en la jerarquía aumentan la capacidad y el tiempo de acceso, y disminuye el costo por bit.
  
 % ----------------------------------------------------------------------
-\subsubsection{Pregunta 4: Ejecución de la instrucción \texttt{SW \#2AB}}
+\section{Pregunta 4: Ejecución de la instrucción \texttt{SW \#2AB}}
  
 La instrucción \texttt{SW \#2AB} (\emph{store word}) guarda el contenido del acumulador en la posición de memoria $2AB_{16}$ (el símbolo \# indica que $2AB$ es una dirección de memoria). En notación de transferencia de registros:
 \[
@@ -407,7 +407,7 @@ Los pasos 1 a 4 son comunes a todas las instrucciones; el paso 4 puede hacerse a
 \porhacer{Compara los nombres de los registros y el formato de instrucción con los apuntes del computador elemental de tu curso. Aquí se usaron MAR y MDR (en algunos apuntes se llaman RDM y RDD, o AR y DR) y se supuso una palabra de instrucción con código de operación y un campo de dirección de 12 bits ($2AB_{16} = 0010\ 1010\ 1011_2$). Si difieren, cambia solo los nombres o el tamaño del campo; la secuencia de micro-operaciones es la misma. Si en clase usaron señales de control, agrégalas en cada paso.}
  
 % ----------------------------------------------------------------------
-\subsubsection{Pregunta 5: Franjas horizontales de colores en assembler Intel}
+\section{Pregunta 5: Franjas horizontales de colores en assembler Intel}
  
 \textbf{Idea.} La pantalla de texto de $80 \times 25$ caracteres dispone de 16 colores (numerados de 0 a 15). La imagen del enunciado muestra 16 franjas, una por color: cada franja ocupa una fila y 16 columnas, y la primera es negra (por eso no se distingue del fondo). Se usan dos funciones de la interrupción \texttt{INT 10h} del BIOS:
  
@@ -494,7 +494,7 @@ Se usa el color de primer plano porque funciona igual en cualquier entorno; los 
 \porhacer{Ensambla (\texttt{nasm -f bin franjas.asm -o franjas.com}), ejecuta \texttt{franjas.com} en DOSBox y toma una captura de pantalla para adjuntarla aquí. Comprueba que se vean las 16 filas en el mismo orden que la imagen del enunciado. El programa se probó en un emulador de 16 bits y dibuja las 16 filas con los colores 0 a 15, pero no se pudo ver en DOSBox ni en EMU8086 desde aquí.}
  
 % ----------------------------------------------------------------------
-\subsubsection{Pregunta 6: Manipulación de bits del registro CX}
+\section{Pregunta 6: Manipulación de bits del registro CX}
  
 Se pide, sobre el dato de CX (bits D7 a D0): invertir los bits impares D5, D3 y D1; borrar los bits pares D6, D4 y D2; y poner en 1 los bits D7 y D0. Cada acción se resuelve con una instrucción lógica y una máscara:
  

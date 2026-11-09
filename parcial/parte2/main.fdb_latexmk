@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1794187963.59001 "/home/camiloasd/Documentos/VS/Laboratorio-AC/parcial/parte2/main.tex" "main.pdf" "main" 1794187965.88221 0
-  "/home/camiloasd/Documentos/VS/Laboratorio-AC/parcial/parte2/main.tex" 1794187960.03772 25241 edeae2a88e011a8154cabb1e066bb97d ""
+["pdflatex"] 1794188402.64306 "/home/camiloasd/Documentos/VS/Laboratorio-AC/parcial/parte2/main.tex" "main.pdf" "main" 1794188405.63019 0
+  "/home/camiloasd/Documentos/VS/Laboratorio-AC/parcial/parte2/main.tex" 1794188397.61094 25205 4079ac55d8aa8bf07b0c92f15ecebb82 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -24,6 +24,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt9.tfm" 1136768653 764 c98a2af25c99b73a368cf7336e255190 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
@@ -46,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1248133631 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1248133631 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb" 1248133631 29078 718ea4567ceff944262b0f5b0800e1d9 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1777593600 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -208,10 +210,10 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1789762487 3527793 08bee20c0708858e45b547a337dc8326 ""
   "img/logo_abet.png" 1794187315.328 6307 66ff7f82180b3b29c348bdae974447b6 ""
   "img/logo_episunsa.png" 1794187317.58285 6815 7da1fe7727dad63b523d0fbca337594d ""
-  "main.aux" 1794187965.70644 1588 20800900364320bd93251bc1f63f3d47 "pdflatex"
-  "main.out" 1794187965.70844 1897 524b746d85d1c64af21f135f9ffbc7ea "pdflatex"
-  "main.tex" 1794187960.03772 25241 edeae2a88e011a8154cabb1e066bb97d ""
-  "main.toc" 1794187965.70944 790 0d7662787496508f6b3b0e61a0dac345 "pdflatex"
+  "main.aux" 1794188405.46806 1468 e465736f9ba4040d7cf1279ab07169ce "pdflatex"
+  "main.out" 1794188405.47006 1837 21ef7b2a7c303166c5e50926e3ae21b4 "pdflatex"
+  "main.tex" 1794188397.61094 25205 4079ac55d8aa8bf07b0c92f15ecebb82 ""
+  "main.toc" 1794188405.47106 670 fcd66566009027ff4037c421b10d8123 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
