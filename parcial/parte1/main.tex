@@ -1,0 +1,197 @@
+\documentclass[10pt]{article}
+
+% ---------- IDIOMA Y CODIFICACIÓN ----------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US,babel}
+
+% ---------- TABLAS (Actividad 1: identificación de dispositivos) ----------
+\usepackage{booktabs}   % líneas de tabla profesionales (\toprule, \midrule, \bottomrule)
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage[table]{xcolor} % opcional, para color en encabezado
+\usepackage{tabularx}   % columnas que se ajustan al ancho de página
+\usepackage{longtable}  % tablas que pueden partirse entre páginas (útil si tu tabla de dispositivos es larga)
+\usepackage{caption}    % control de estilo de "Tabla X: ..."
+\usepackage{float}
+\usepackage{makecell}
+
+% ---------- GLOSARIO (Actividad 2) ----------
+% Enfoque simple con "description", sin necesidad de correr makeglossaries aparte
+% (evita agregar un paso extra a tu pipeline de compilación).
+\usepackage{enumitem}
+\newlist{glosario}{description}{1}
+\setlist[glosario]{
+    font=\normalfont\bfseries,
+    leftmargin=0pt,
+    labelsep=0.5em,
+    itemsep=0.5em
+}
+
+% ---------- Definiciones auxiliares ----------
+\lstdefinestyle{asm}{
+  language={[x86masm]Assembler},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=6pt,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4
+}
+%---- MINTED..----- 
+
+\usepackage{xcolor}
+\usepackage{minted}
+\definecolor{bg}{rgb}{0.90,0.91,0.83}
+
+\providecommand{\espacioimagen}[1]{%
+  \fbox{\parbox[c][4.5cm][c]{0.9\linewidth}{\centering\itshape Insertar captura: #1}}}
+ 
+% \figuraimagen{archivo.png}{Leyenda}{etiqueta}{descripción del recuadro}
+\providecommand{\figuraimagen}[4]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{img/#1}{\includegraphics[width=0.9\linewidth]{img/#1}}{\espacioimagen{#4\\[2pt]{\upshape\small\texttt{img/#1}}}}
+    \caption{#2}\label{#3}
+  \end{figure}}
+ 
+
+%      \relleno{Tu texto}    -> muestra tu texto en rojo (útil para ir dejando borradores)
+\newcommand{\relleno}[1][\textbf{[COMPLETAR AQUÍ]}]{\textcolor{red}{#1}}
+% ---------- CONFIGURACIONES PARA ENCABEZADO Y PORTADA ----------
+\usepackage{colortbl}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+
+% Definición de colores y columnas personalizadas (usadas en la portada)
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+% Variables de datos para la portada y encabezado
+\newcommand{\itemEmail}{ccapatinta@unsa.edu.pe}
+\newcommand{\itemStudent}{Camilo B.A. Capatinta Almanza (Teoría grupo B)}
+\newcommand{\itemCourse}{Lab. Arq. de computadoras}
+\newcommand{\itemCourseCode}{1702227}
+\newcommand{\itemSemester}{IV}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2026 - B}
+\newcommand{\itemInput}{20/10/2026}
+\newcommand{\itemOutput}{--/10/2026}
+\newcommand{\itemPracticeNumber}{05}
+\newcommand{\itemTheme}{Programación para el microprocesador INTEL - Instrucciones Aritméticas}
+
+% Configuración del encabezado y pie de página (fancyhdr)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{40.51407pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Encabezado
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont    \itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet.png}}}
+
+% Pie de página
+\fancyfoot[L]{Estudiante Camilo Capatinta}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+\begin{document}
+
+\section{Actividades}
+
+\subsection{Parte 1: Verdadero (V) o Falso (F)}
+
+\begin{itemize}
+  \item \textbf{1. Falso (F).} La SRAM es muy rápida, pero es costosa y de baja densidad; por eso se usa como memoria \emph{caché}. La memoria principal de un computador se construye con DRAM, que es más barata y densa.
+
+  \item \textbf{2. Verdadero (V).} Los procesadores RISC son muy rápidos gracias a su juego reducido de instrucciones, pero necesitan del orden de un 30\,\% más de instrucciones que una máquina CISC para un programa tipo.
+
+  \item \textbf{3. Verdadero (V).} La memoria virtual requiere traducir direcciones lógicas a físicas, tarea que realiza la MMU (\emph{Memory Management Unit}), ya sea integrada en el procesador o como dispositivo aparte.
+
+  \item \textbf{4. Verdadero (V).} Describe correctamente el funcionamiento de la caché: se transfiere un bloque en el primer acceso, los accesos siguientes al bloque se leen de la caché, la función de mapeo define la correspondencia bloque--memoria principal y el algoritmo de reemplazo decide qué bloque se elimina cuando la caché se llena.
+
+  \item \textbf{5. Verdadero (V).} En una caché de correspondencia directa, los bits centrales de la dirección (índice) seleccionan el bloque, la etiqueta se compara con la almacenada y, si coinciden y el bit de válido está activo, hay acierto; en caso contrario hay fallo y se accede a la memoria principal.
+
+  \item \textbf{6. Falso (F).} El orden dado (Componente, Electrónico, Digital, RTL, PMS) corresponde al modelo \emph{bottom-up}. El orden \emph{top-down} correcto es: PMS, RTL, Digital, Electrónico y Componente.
+
+  \item \textbf{7. Falso (F).} Las memorias Flash son de lectura/escritura y de acceso aleatorio, pero son \textbf{no volátiles}: conservan la información sin alimentación.
+
+  \item \textbf{8. Verdadero (V).} La paginación y la segmentación permiten un espacio de direccionamiento virtual mayor que la memoria física, no requieren tener todo el programa en memoria y facilitan la compartición de código y los programas reubicables.
+
+  \item \textbf{9. Falso (F).} El registro de instrucción (IR) almacena la \emph{instrucción actual} que se está ejecutando. La dirección de la siguiente instrucción la almacena el contador de programa (PC).
+
+  \item \textbf{10. Verdadero (V).} Un sistema operativo es el conjunto de programas, instalados en software o firmware, que hace utilizable el hardware.
+
+  \item \textbf{11. Falso (F).} Un computador es un sistema secuencial \textbf{síncrono} (sincronizado por una señal de reloj), no asíncrono. El resto del enunciado (representación binaria, 1 lógico $\approx$ 5\,V y 0 lógico $\approx$ 0\,V) es correcto.
+
+  \item \textbf{12. Verdadero (V).} El complemento a dos de $0Ah$ se obtiene así:
+  \begin{align*}
+    0Ah &= 0000\ 1010_2 \\
+    \text{complemento a uno} &= 1111\ 0101_2 \\
+    +1 &\;\Rightarrow\; 1111\ 0110_2
+  \end{align*}
+  que coincide con el valor del enunciado ($F6h = -10_{10}$).
+\end{itemize}
+
+\subsection{Parte 1: Preguntas de desarrollo}
+
+\begin{itemize}
+  \item \textbf{13. Capacidad de direccionamiento: 16 KBytes.}
+
+  Dirección inicial: $04000h$; dirección final: $07FFFh$. Como cada dirección contiene un byte:
+  \[
+    07FFFh - 04000h + 1 = 03FFFh + 1 = 4000h = 2^{14}\ \text{bytes}
+  \]
+  \[
+    2^{14}\ \text{bytes} = 2^{4} \cdot 2^{10} = 16\ \text{KBytes}
+  \]
+
+  \item \textbf{14. Número de bits del bus de direcciones: 39 bits.}
+
+  Si cada dirección contiene un byte, hay que direccionar $512\ \text{GBytes}$:
+  \[
+    512\ \text{GB} = 2^{9} \cdot 2^{30}\ \text{bytes} = 2^{39}\ \text{bytes}
+  \]
+  Por tanto, se necesitan $n = 39$ bits en el bus de direcciones.
+
+  \item \textbf{15. Resultado: $AC = 0$ y contenido de la dirección $401 = 10$.}
+
+  Estado inicial: $M[400] = 10$, $M[401] = 5$. El programa funciona como un bucle: carga $M[401]$, lo incrementa, lo guarda de nuevo y resta $M[400]$; si el resultado es cero, termina (\texttt{JMZ fin}); si no, repite (\texttt{JMP bucle}).
+
+  \begin{center}
+  \begin{tabular}{c c c c c}
+    \hline
+    \textbf{Iteración} & \textbf{LW \#401} & \textbf{INC AC / SW \#401} & \textbf{SUB \#400} & \textbf{¿Salta a fin?} \\
+    \hline
+    1  & $AC=5$  & $AC=6,\ M[401]=6$   & $AC=6-10=-4$ & No \\
+    2  & $AC=6$  & $AC=7,\ M[401]=7$   & $AC=-3$      & No \\
+    3  & $AC=7$  & $AC=8,\ M[401]=8$   & $AC=-2$      & No \\
+    4  & $AC=8$  & $AC=9,\ M[401]=9$   & $AC=-1$      & No \\
+    5  & $AC=9$  & $AC=10,\ M[401]=10$ & $AC=0$       & Sí \\
+    \hline
+  \end{tabular}
+  \end{center}
+
+  Al llegar a \texttt{fin: STP}, el acumulador vale $AC = 0$ (resultado de $10 - 10$) y la posición $401$ contiene $10$.
+\end{itemize}
+
+\end{document}
