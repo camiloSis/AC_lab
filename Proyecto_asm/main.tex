@@ -1,0 +1,903 @@
+\documentclass[10pt]{article}
+
+% ---------- IDIOMA Y CODIFICACIÓN ----------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US,babel}
+
+% ---------- TABLAS (Actividad 1: identificación de dispositivos) ----------
+\usepackage{booktabs}   % líneas de tabla profesionales (\toprule, \midrule, \bottomrule)
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage[table]{xcolor} % opcional, para color en encabezado
+\usepackage{tabularx}   % columnas que se ajustan al ancho de página
+\usepackage{longtable}  % tablas que pueden partirse entre páginas (útil si tu tabla de dispositivos es larga)
+\usepackage{caption}    % control de estilo de "Tabla X: ..."
+\usepackage{float}
+\usepackage{makecell}
+
+% ---------- GLOSARIO (Actividad 2) ----------
+% Enfoque simple con "description", sin necesidad de correr makeglossaries aparte
+% (evita agregar un paso extra a tu pipeline de compilación).
+\usepackage{enumitem}
+\newlist{glosario}{description}{1}
+\setlist[glosario]{
+    font=\normalfont\bfseries,
+    leftmargin=0pt,
+    labelsep=0.5em,
+    itemsep=0.5em
+}
+
+% -------- CONFIGRACION DEL CUERPO ------
+\lstset{
+  language=[x86masm]Assembler,
+  basicstyle=\ttfamily\small,
+  commentstyle=\color{gray},
+  keywordstyle=\color{blue!55!black}\bfseries,
+  stringstyle=\color{black!70},
+  numberstyle=\tiny\color{red!60!black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  captionpos=b,
+  tabsize=4
+}
+
+% ---------- Definiciones auxiliares ----------
+\lstdefinestyle{asm}{
+  language={[x86masm]Assembler},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=6pt,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4
+}
+%---- MINTED..-----
+
+\definecolor{bg}{rgb}{0.90,0.91,0.83}
+
+\providecommand{\espacioimagen}[1]{%
+  \fbox{\parbox[c][4.5cm][c]{0.9\linewidth}{\centering\itshape Insertar captura: #1}}}
+ 
+% \figuraimagen{archivo.png}{Leyenda}{etiqueta}{descripción del recuadro}
+\providecommand{\figuraimagen}[4]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{img/#1}{\includegraphics[width=0.9\linewidth]{img/#1}}{\espacioimagen{#4\\[2pt]{\upshape\small\texttt{img/#1}}}}
+    \caption{#2}\label{#3}
+  \end{figure}}
+ 
+
+%      \relleno{Tu texto}    -> muestra tu texto en rojo (útil para ir dejando borradores)
+\newcommand{\relleno}[1][\textbf{[COMPLETAR AQUÍ]}]{\textcolor{red}{#1}}
+% ---------- CONFIGURACIONES PARA ENCABEZADO Y PORTADA ----------
+\usepackage{colortbl}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,citecolor=black]{hyperref}
+
+% Definición de colores y columnas personalizadas (usadas en la portada)
+\definecolor{tablebackground}{rgb}{0.8, 0, 0}
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{N}{@{}m{0pt}@{}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+% Variables de datos para la portada y encabezado
+\newcommand{\itemEmail}{ccapatinta@unsa.edu.pe}
+\newcommand{\itemStudent}{Camilo B.A. Capatinta Almanza (Teoría grupo B)}
+\newcommand{\itemCourse}{Lab. Arquitectura de Computadoras}
+\newcommand{\itemCourseCode}{1702227}
+\newcommand{\itemSemester}{IV}
+\newcommand{\itemUniversity}{Universidad Nacional de San Agustín de Arequipa}
+\newcommand{\itemFaculty}{Facultad de Ingeniería de Producción y Servicios}
+\newcommand{\itemDepartment}{Departamento Académico de Ingeniería de Sistemas e Informática}
+\newcommand{\itemSchool}{Escuela Profesional de Ingeniería de Sistemas}
+\newcommand{\itemAcademic}{2026 - B}
+\newcommand{\itemInput}{20/10/2026}
+\newcommand{\itemOutput}{--/10/2026}
+\newcommand{\itemProjectTitle}{Programa en ensamblador}
+\newcommand{\itemProjectName}{Snake Game}
+\newcommand{\itemProfessor}{Pedro A. Rodriguez Gonzales}
+
+% Configuración del encabezado y pie de página (fancyhdr)
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{40.51407pt}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+% Encabezado
+\fancyhead[L]{\raisebox{-0.2\height}{\includegraphics[width=3cm]{img/logo_episunsa.png}}}
+\fancyhead[C]{\fontsize{7}{7}\selectfont    \itemUniversity \\ \itemFaculty \\ \itemDepartment \\ \itemSchool \\ \textbf{\itemCourse}}
+\fancyhead[R]{\raisebox{-0.2\height}{\includegraphics[width=1.2cm]{img/logo_abet.png}}}
+
+% Pie de página
+\fancyfoot[L]{Estudiante Camilo Capatinta}
+\fancyfoot[C]{\itemCourse}
+\fancyfoot[R]{Página \thepage}
+
+\begin{document}
+
+% --- INICIO DE LA PORTADA ---
+    \vspace*{10pt}
+	
+    \begin{center}
+        \parbox{0.8\textwidth}{\centering\fontsize{17}{20}\selectfont\textbf{\itemProjectTitle}}
+	\end{center}
+	\begin{center}
+        \parbox{0.8\textwidth}{\centering\textbf{\Large \itemProjectName}}
+	\end{center}
+
+\begin{flushright}
+    \begin{tabular}{|M{2.5cm}|N|}
+        \hline 
+        \rowcolor{tablebackground}
+        \color{white} \textbf{Nota}  \\
+        \hline 
+             \\[30pt]
+        \hline          
+    \end{tabular}
+\end{flushright}    
+
+\begin{table}[h!]
+    \begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}        
+        \hline 
+        \rowcolor{tablebackground}
+        \color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+        \hline 
+        {\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+        \hline          
+    \end{tabular}
+\end{table}     
+
+\begin{table}[H]
+    \begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+        \hline 
+        \rowcolor{tablebackground}
+        \color{white}\textbf{Profesor} & \color{white}\textbf{Proyecto}  & \color{white}\textbf{Duración}   \\
+        \hline 
+        \itemProfessor & \itemProjectName & 02 horas   \\
+        \hline 
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+        \hline 
+        \rowcolor{tablebackground}
+        \color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+        \hline 
+        \itemAcademic & \itemInput &  \itemOutput  \\
+        \hline 
+    \end{tabular}
+\end{table}
+
+\newpage
+\tableofcontents
+\thispagestyle{plain}
+\clearpage
+
+\section{Actividades}
+
+\subsection{Descripción de la actividad}
+El curso de Arquitectura de Computadoras de la carrera de Ingeniería de Sistemas de la Universidad Nacional de San Agustín de Arequipa (UNSA) encarga a cada estudiante un trabajo integrador que consiste en programar en ensamblador un juego. El enunciado del profesor exige que el programa aplique, en un contexto reconocible y motivador, los contenidos revisados en las prácticas del curso: manipulación de datos, modos de direccionamiento, control de flujo, aritmética y uso de la pila.
+
+Este documento describe el proyecto desarrollado para cumplir ese encargo: una implementación del clásico juego \textbf{Snake} para procesador 8086, escrita para el emulador EMU8086 y ensamblada como programa de formato COM. El documento se limita a describir lo que el código fuente \texttt{snake.asm} contiene; no propone cambios al programa ni atribuye funcionalidades que este no posea. Cuando un dato no está definido con certeza, el texto lo indica y la sección \emph{Notas para el autor}, al final del documento, lo enumera como pendiente de confirmar.
+
+\subsection{Objetivos}
+El objetivo general es construir un juego funcional en ensamblador 8086 y documentarlo con rigor técnico. Los objetivos específicos son los siguientes:
+\begin{itemize}[leftmargin=*]
+  \item Aplicar la \textbf{Práctica 2} (sumador total): operaciones aritméticas y lógicas básicas con acarreo, \texttt{ADD}, \texttt{ADC}, \texttt{SUB}, \texttt{XOR}, \texttt{AND} y desplazamientos.
+  \item Aplicar la \textbf{Práctica 3} (modos de direccionamiento): direccionamiento inmediato, de registro, directo e indirecto por registro.
+  \item Aplicar la \textbf{Práctica 4} (control de flujo): comparaciones, saltos condicionales e incondicionales, bucles con \texttt{LOOP} y llamadas a procedimientos con \texttt{CALL}/\texttt{RET}.
+  \item Aplicar la \textbf{Práctica 5} (operaciones aritméticas y pila): \texttt{MUL}, \texttt{DIV}, \texttt{INC}, \texttt{DEC}, \texttt{PUSH}, \texttt{POP}, constantes con \texttt{EQU} y datos con \texttt{DB}/\texttt{DW}.
+  \item Utilizar los servicios del BIOS (\texttt{INT 10h}, \texttt{INT 16h}, \texttt{INT 1Ah}) y de DOS (\texttt{INT 21h}) para pantalla, teclado y temporización.
+  \item Documentar el diseño, el funcionamiento, el rendimiento y las limitaciones del programa para su exposición en clase.
+\end{itemize}
+
+\subsection{Entorno de desarrollo y herramientas}
+El desarrollo y la verificación se realizan con las herramientas de la Tabla~\ref{tab:herramientas}.
+
+\begin{table}[ht]
+\centering
+\caption{Herramientas empleadas en el proyecto.}
+\label{tab:herramientas}
+\begin{tabular}{@{}p{3.6cm}p{9cm}@{}}
+\toprule
+Herramienta & Uso \\
+\midrule
+EMU8086 (versión pendiente de confirmar) & Edición, ensamblado y emulación del programa en formato COM. \\
+Editor de texto & Edición alternativa del código fuente \texttt{snake.asm}. \\
+DOSBox (opcional) & Ejecución alternativa del archivo COM generado. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Alcance y entregables}
+El alcance comprende un único juego de un jugador, con tablero fijo de 40 columnas por 10 filas, sin pausa, sin sonido y sin reinicio. Los entregables son tres:
+\begin{enumerate}[leftmargin=*]
+  \item \texttt{snake.asm}: código fuente completo del juego.
+  \item \texttt{descripcion.md}: descripción breve del proyecto.
+  \item Este documento (\texttt{Snake\_Game.tex}), que documenta el diseño y la implementación.
+\end{enumerate}
+
+\section{Marco teórico}
+
+\subsection{Arquitectura 8086 y segmentación}
+El procesador 8086 es un microprocesador de 16 bits con bus de direcciones de 20 bits. Como sus registros solo almacenan 16 bits, la dirección física se forma combinando un registro de segmento con un desplazamiento (\emph{offset}): la dirección física equivale al segmento multiplicado por 16 más el desplazamiento. Los registros de segmento son \texttt{CS} (código), \texttt{DS} (datos), \texttt{SS} (pila) y \texttt{ES} (extra).
+
+Las banderas del registro de estado resultan esenciales para este proyecto. La bandera \texttt{ZF} (\textbf{Zero Flag}) indica que el resultado de la última operación fue cero o que una comparación resultó en igualdad. La bandera \texttt{CF} (\textbf{Carry Flag}) indica un acarreo o un préstamo en operaciones sin signo. Estas dos banderas deciden todos los saltos condicionales del programa (véase la Tabla~\ref{tab:banderas}).
+
+\begin{table}[ht]
+\centering
+\caption{Banderas que deciden los saltos condicionales del código.}
+\label{tab:banderas}
+\begin{tabular}{@{}p{3cm}p{3cm}p{7cm}@{}}
+\toprule
+Salto & Bandera & Interpretación \\
+\midrule
+\texttt{JE} / \texttt{JNE} & \texttt{ZF} & Igualdad o desigualdad tras \texttt{CMP}. \\
+\texttt{JB} / \texttt{JAE} & \texttt{CF} & Comparación \emph{sin signo}: menor que / mayor o igual que. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las instrucciones \texttt{JL}/\texttt{JGE}, que interpretan los operandos con signo, \textbf{no se utilizan} en este código, por la razón que explica la sección~\ref{sec:signo}.
+
+\subsection{Modelo de memoria del formato COM}
+Un programa COM se carga en un único segmento y ocupa como máximo 64~KB. El cargador de DOS inicializa \texttt{CS}, \texttt{DS}, \texttt{ES} y \texttt{SS} con el mismo valor, de modo que el programa no necesita inicializar \texttt{DS} manualmente: código, datos y pila comparten segmento desde el arranque. Por esa razón el programa no declara \texttt{.model} ni \texttt{.stack}, y comienza con la directiva \texttt{org 100h}, que reserva los primeros 256 bytes del segmento para el prefijo de segmento de programa (PSP).
+
+\paragraph{Comparación con signo y sin signo.}\label{sec:signo}
+Tras \texttt{CMP}, las instrucciones \texttt{JL}/\texttt{JGE} interpretan el resultado como número con signo, mientras que \texttt{JB}/\texttt{JAE} lo interpretan sin signo. En el juego, la fila y la columna de la cabeza se mantienen en registros de 8 bits. Cuando la cabeza está en la fila~0 y se mueve hacia arriba, \texttt{DEC} deja el valor \texttt{255} (\texttt{0FFh}). Con interpretación con signo, \texttt{0FFh} equivale a $-1$ y \texttt{JGE} lo trataría como menor que el límite del tablero, de modo que no detectaría la pared. Con interpretación sin signo, \texttt{255} es mayor que cualquier límite válido y \texttt{JAE} detecta correctamente la salida del tablero. Por eso la comparación sin signo es obligatoria en este programa.
+
+\subsection{Modo texto 80x25 y servicios BIOS (INT 10h)}
+En modo texto de 80 columnas por 25 filas, la memoria de video comienza en la dirección \texttt{B800:0000}; cada celda ocupa dos bytes (carácter y atributo de color). Escribir directamente en esa memoria sería la opción más rápida. Este prototipo emplea en cambio la interrupción \texttt{INT 10h} del BIOS, que es más sencilla de explicar y de verificar: es una decisión didáctica, no óptima. Los servicios utilizados se resumen en el Anexo~C (Tabla~\ref{tab:servicios}). Los atributos de color usados son \texttt{07h} (gris, borde), \texttt{0Ah} (verde, serpiente) y \texttt{0Ch} (rojo, comida).
+
+\subsection{Lectura de teclado (INT 16h) y reloj del BIOS (INT 1Ah)}
+La función \texttt{AH=01h} de \texttt{INT 16h} consulta el búfer de teclado \emph{sin bloquear}: indica mediante \texttt{ZF} si hay una tecla pendiente. La función \texttt{AH=00h} extrae la tecla del búfer; para teclas extendidas, como las flechas, devuelve \texttt{AL=0} y el código de exploración (\emph{scancode}) en \texttt{AH}.
+
+La función \texttt{AH=00h} de \texttt{INT 1Ah} devuelve el contador de ticks del reloj del BIOS en \texttt{CX:DX}. Este contador avanza aproximadamente 18,2 veces por segundo; el procedimiento \texttt{DELAY} lo emplea como base de tiempo.
+
+\subsection{Servicios DOS (INT 21h)}
+La interrupción \texttt{INT 21h} ofrece los servicios del sistema operativo. En este programa interviene en la impresión de caracteres o cadenas, en particular en \texttt{PRINT\_NUM}, que solo se ejecuta cuando la serpiente come. El detalle de las funciones empleadas se resume en el Anexo~C.
+
+\subsection{Cola circular y direccionamiento indirecto}
+Una \textbf{cola circular} es un arreglo de tamaño fijo con dos índices: uno de escritura (\texttt{head}) y otro de lectura (\texttt{tail}). Al llegar al final del arreglo, el índice vuelve a cero. En el juego, la cola almacena los índices de las celdas ocupadas por la serpiente, de la cola (más antigua) a la cabeza (más reciente). Mover la serpiente consiste en insertar una celda en \texttt{head} y, si no comió, retirar la celda de \texttt{tail}. Con un arreglo lineal habría que desplazar todos los elementos tras cada movimiento (\texttt{memmove}); la cola circular lo evita y mantiene cada operación en tiempo constante.
+
+El acceso al arreglo \texttt{queue}, de palabras de 16 bits, usa direccionamiento indirecto por registro (\texttt{[SI]}), con el índice multiplicado por dos mediante \texttt{SHL SI,1}. El acceso al arreglo \texttt{board}, de bytes, usa \texttt{[BX]}.
+
+\section{Diseño del juego}
+
+\subsection{Reglas y controles}
+El jugador controla una serpiente que se mueve sin detenerse. Las reglas son las siguientes:
+\begin{itemize}[leftmargin=*]
+  \item La serpiente comienza con tres segmentos en la fila~5, columnas 19, 20 y 21 del tablero, con la cabeza en la columna~21 y orientada a la derecha.
+  \item Al ocupar la celda de la comida, la serpiente crece un segmento y el puntaje aumenta en uno; aparece una nueva comida en una celda libre.
+  \item El juego termina al chocar con una pared o con el propio cuerpo. La celda que ocupa la cola en ese instante \emph{cuenta como colisión}.
+  \item El giro de $180^\circ$ está prohibido: se rechaza la tecla cuya dirección sea opuesta a la actual.
+  \item La tecla \texttt{ESC} termina el programa en cualquier momento y restaura el modo de video y el cursor.
+\end{itemize}
+
+La Tabla~\ref{tab:teclas} resume los controles. La dirección se codifica con \texttt{dir}: 0 arriba, 1 derecha, 2 abajo, 3 izquierda.
+
+\begin{table}[ht]
+\centering
+\caption{Teclas aceptadas, códigos y dirección resultante.}
+\label{tab:teclas}
+\begin{tabular}{@{}llllc@{}}
+\toprule
+Tecla & ASCII (\texttt{AL}) & Scancode (\texttt{AH}) & Dirección & \texttt{dir} \\
+\midrule
+Flecha arriba & \texttt{0} & \texttt{48h} & Arriba & 0 \\
+Flecha derecha & \texttt{0} & \texttt{4Dh} & Derecha & 1 \\
+Flecha abajo & \texttt{0} & \texttt{50h} & Abajo & 2 \\
+Flecha izquierda & \texttt{0} & \texttt{4Bh} & Izquierda & 3 \\
+\texttt{W} / \texttt{w} & \texttt{57h} / \texttt{77h} & --- & Arriba & 0 \\
+\texttt{D} / \texttt{d} & \texttt{44h} / \texttt{64h} & --- & Derecha & 1 \\
+\texttt{S} / \texttt{s} & \texttt{53h} / \texttt{73h} & --- & Abajo & 2 \\
+\texttt{A} / \texttt{a} & \texttt{41h} / \texttt{61h} & --- & Izquierda & 3 \\
+\texttt{ESC} & \texttt{1Bh} (27) & --- & Salir & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Representación del tablero}
+El tablero lógico tiene 40 columnas por 10 filas (400 celdas) y se guarda en el arreglo \texttt{board}, con un byte por celda: \texttt{0} libre, \texttt{1} serpiente y \texttt{2} comida. El índice de una celda es $\text{fila}\times 40+\text{columna}$. La celda de fila $r$ y columna $c$ se dibuja en la pantalla en la fila $r+2$ y la columna $c+20$ del modo texto. Por ejemplo, la celda de la fila~5 y la columna~19 tiene índice $5\cdot 40+19=219$. El borde se dibuja en gris (\texttt{07h}) alrededor del tablero; el puntaje aparece en la fila~0, columna~19, con el formato ``Puntaje: '' seguido del número.
+
+\subsection{Estructuras de datos}
+La Tabla~\ref{tab:variables} lista las constantes y variables del programa. Su contenido coincide con el código fuente y se repite como Anexo~B.
+
+\begin{table}[ht]
+\centering
+\caption{Constantes y variables del programa.}
+\label{tab:variables}
+\begin{tabular}{@{}p{2.6cm}p{1.4cm}p{2cm}p{7.2cm}@{}}
+\toprule
+Nombre & Tipo & Tamaño & Uso \\
+\midrule
+\texttt{BOARD\_W} & \texttt{EQU} & --- & Ancho del tablero: 40. \\
+\texttt{BOARD\_H} & \texttt{EQU} & --- & Alto del tablero: 10. \\
+\texttt{BOARD\_SIZE} & \texttt{EQU} & --- & Total de celdas: 400. \\
+\texttt{board} & \texttt{DB} & 400 bytes & Estado de cada celda (0, 1, 2). \\
+\texttt{queue} & \texttt{DW} & 400 palabras & Cola circular de índices de la serpiente. \\
+\texttt{head} & \texttt{DW} & 1 palabra & Índice de escritura de la cola (cabeza). \\
+\texttt{tail} & \texttt{DW} & 1 palabra & Índice de lectura de la cola (cola). \\
+\texttt{dir} & \texttt{DB} & 1 byte & Dirección actual (0 a 3). \\
+\texttt{headRow} & \texttt{DB} & 1 byte & Fila de la cabeza. \\
+\texttt{headCol} & \texttt{DB} & 1 byte & Columna de la cabeza. \\
+\texttt{score} & \texttt{DW} & 1 palabra & Puntaje. \\
+\texttt{seed} & \texttt{DW} & 1 palabra & Semilla del generador pseudoaleatorio. \\
+\texttt{delayTicks} & \texttt{DB} & 1 byte & Ticks de espera por fotograma (valor 2). \\
+\texttt{msgScore} & \texttt{DB} & cadena & Texto ``Puntaje: ''. \\
+\texttt{msgGameOver} & \texttt{DB} & cadena & Texto ``GAME OVER!''. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Procedimientos y sus contratos}
+El programa define exactamente diez procedimientos: \texttt{INIT\_GAME}, \texttt{DRAW\_BORDER}, \texttt{READ\_KEY}, \texttt{MOVE\_SNAKE}, \texttt{CHECK\_COLLISION}, \texttt{SPAWN\_FOOD}, \texttt{DRAW\_CELL}, \texttt{PRINT\_NUM}, \texttt{DELAY} y \texttt{GAME\_OVER}. La Tabla~\ref{tab:fichas} presenta la ficha de cada uno. Cada procedimiento guarda con \texttt{PUSH} los registros que modifica y los restaura con \texttt{POP} antes de \texttt{RET}; la lista exacta de registros de cada uno está pendiente de confirmar contra el listado completo (Anexo~A) y se señala en las notas finales. No se emplean \texttt{PUSHA} ni \texttt{POPA}.
+
+\begin{longtable}{@{}p{2.5cm}p{3cm}p{2.6cm}p{5cm}@{}}
+\caption{Fichas de los procedimientos.}\label{tab:fichas}\\
+\toprule
+Procedimiento & Entradas & Salidas & Resumen \\
+\midrule
+\endfirsthead
+\toprule
+Procedimiento & Entradas & Salidas & Resumen \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{INIT\_GAME} & Ninguna (usa constantes). & Variables y \texttt{board} inicializados. & Limpia el tablero, coloca los tres segmentos iniciales, fija \texttt{dir}, \texttt{headRow}, \texttt{headCol}, \texttt{head}, \texttt{tail} y puntaje. \\
+\texttt{DRAW\_BORDER} & Ninguna. & Borde dibujado. & Dibuja el marco gris del tablero mediante bucles con \texttt{LOOP}. \\
+\texttt{READ\_KEY} & Estado del búfer de teclado. & \texttt{AL}: 0 si el juego continúa (ver Sección~\ref{sec:bucle}). Actualiza \texttt{dir}. & Consulta sin bloquear, consume la tecla, detecta \texttt{ESC}, flechas y WASD, y rechaza el giro de $180^\circ$. \\
+\texttt{MOVE\_SNAKE} & \texttt{dir}, \texttt{headRow}, \texttt{headCol}, \texttt{head}, \texttt{tail}. & \texttt{AL=1} si hubo colisión; actualiza cola y tablero. & Calcula la nueva cabeza, consulta la colisión, encola la nueva celda y, si no come, libera la cola. \\
+\texttt{CHECK\_COLLISION} & Fila y columna candidatas. & \texttt{AL=1} si choca con pared o cuerpo. & Compara con límites mediante \texttt{JAE}, calcula el índice con \texttt{MUL} y consulta \texttt{board}. \\
+\texttt{SPAWN\_FOOD} & \texttt{seed}, \texttt{board}. & Comida en una celda libre (o ninguna, tras 1000 intentos). & Genera posiciones pseudoaleatorias hasta hallar una celda libre. \\
+\texttt{DRAW\_CELL} & Índice de celda, carácter y atributo. & Celda dibujada. & Convierte índice a fila y columna con \texttt{DIV}, posiciona el cursor y escribe el carácter con \texttt{INT 10h}. \\
+\texttt{PRINT\_NUM} & Número (puntaje). & Número impreso. & Descompone el número en dígitos con \texttt{DIV} y los imprime con \texttt{INT 21h}. \\
+\texttt{DELAY} & \texttt{delayTicks}. & Ninguna. & Espera el número de ticks indicado leyendo \texttt{INT 1Ah}. \\
+\texttt{GAME\_OVER} & \texttt{score}. & Mensaje y puntaje final. & Muestra ``GAME OVER!'' y el puntaje en la fila~14 y espera una tecla. \\
+\end{longtable}
+
+\section{Desarrollo e implementación}
+
+\subsection{Altas y bajas del diseño}
+El diseño evolucionó mediante decisiones de incorporación (altas) y de descarte (bajas). Esta subsección las narra y justifica.
+
+\paragraph{Altas.}
+\emph{Cola circular.} Se adoptó una cola circular de índices para representar la serpiente. La alternativa, un arreglo lineal con desplazamiento de elementos en cada paso, habría exigido copiar hasta 400 palabras por movimiento. La cola circular reduce el costo a una inserción y, como máximo, una extracción.
+
+\emph{Separación entre \texttt{CHECK\_COLLISION} y el manejo de comida.} La verificación de choque solo informa si la celda destino es mortal; la decisión de comer, crecer o liberar la cola corresponde a \texttt{MOVE\_SNAKE}. Esta separación mantiene cada procedimiento con una responsabilidad única y facilita la explicación en clase.
+
+\emph{Dibujo selectivo.} En lugar de redibujar el tablero completo en cada fotograma, el programa actualiza únicamente la nueva cabeza, la celda de la cola cuando esta se libera y la comida al generarse.
+
+\paragraph{Bajas.}
+\emph{Redibujado completo del tablero.} Se descartó porque provocaba parpadeo visible y un costo innecesario: cada fotograma habría emitido cientos de llamadas a \texttt{INT 10h}.
+
+\emph{Tabla precalculada de $\text{fila}\times 40$.} Se descartó porque añadía complejidad de datos y de acceso sin aportar una mejora relevante en un prototipo cuyo cuello de botella es el retardo deliberado. El índice se calcula con \texttt{MUL}, lo que además permite ejercitar la Práctica~5.
+
+\emph{Sonido y pausa.} Quedaron fuera del alcance: no forman parte de los objetivos del curso y habrían incrementado el tamaño y la superficie de pruebas del programa.
+
+\subsection{Decisiones de implementación destacadas}
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Comparación sin signo.} La detección de paredes usa \texttt{CMP} con \texttt{JAE}, porque \texttt{DEC} sobre una fila o columna en cero produce \texttt{255} (véase el Marco teórico).
+  \item \textbf{Giro de $180^\circ$.} \texttt{READ\_KEY} rechaza la nueva dirección si es igual a $(\texttt{dir}+2)\ \texttt{AND}\ 3$, expresión que obtiene la dirección opuesta en aritmética módulo~4.
+  \item \textbf{Generador pseudoaleatorio.} \texttt{SPAWN\_FOOD} aplica la recurrencia $\texttt{seed}\leftarrow \texttt{seed}\cdot 25173+13849$ con \texttt{MUL} de 16 bits y obtiene la posición como $\texttt{seed}\bmod 400$ con \texttt{DIV} de 16 bits, con \texttt{DX=0} previo.
+  \item \textbf{Límite de intentos.} \texttt{SPAWN\_FOOD} realiza como máximo 1000 intentos, de modo que no se cuelga si el tablero está lleno.
+  \item \textbf{Salida limpia.} Al salir, el programa restaura el modo de video y el cursor mediante \texttt{INT 10h}, \texttt{AH=01h}, \texttt{CX=0607h}.
+\end{itemize}
+
+\subsection{Tabla de rastreo: Práctica del curso a código}
+La Tabla~\ref{tab:rastreo} relaciona cada práctica con las instrucciones que realmente aparecen en el código. No se incluyen instrucciones ausentes del programa (por ejemplo, no se emplea \texttt{IMUL}). Las banderas que deciden los saltos están en la Tabla~\ref{tab:banderas}.
+
+\begin{longtable}{@{}p{1.6cm}p{3.2cm}p{4.6cm}p{3.6cm}@{}}
+\caption{Rastreo entre las prácticas del curso y el código de \texttt{snake.asm}.}\label{tab:rastreo}\\
+\toprule
+Práctica & Instrucción / tema & Procedimiento real del código & Procedimiento del \texttt{.asm} donde aparece \\
+\midrule
+\endfirsthead
+\toprule
+Práctica & Instrucción / tema & Procedimiento real del código & Procedimiento del \texttt{.asm} donde aparece \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+2 & \texttt{ADD}/\texttt{ADC} & Suma del incremento del generador con propagación de acarreo. & \texttt{SPAWN\_FOOD} \\
+2 & \texttt{SUB} & Inicialización de valores y cálculo de ticks transcurridos. & \texttt{INIT\_GAME}, \texttt{DELAY} \\
+2 & \texttt{XOR} & Puesta a cero de registros. & \texttt{INIT\_GAME}, \texttt{READ\_KEY}, \texttt{CHECK\_COLLISION}, \texttt{PRINT\_NUM}, \texttt{SPAWN\_FOOD} \\
+2 & \texttt{AND 3} & Módulo~4 de la dirección opuesta. & \texttt{READ\_KEY} \\
+2 & \texttt{SHL SI,1} & Conversión de índice a desplazamiento en palabras. & \texttt{MOVE\_SNAKE} \\
+3 & \texttt{MOV} inmediato & Carga de constantes y coordenadas iniciales. & \texttt{INIT\_GAME}, \texttt{DRAW\_BORDER} \\
+3 & \texttt{MOV} registro--registro & Preparación de parámetros de pantalla. & \texttt{DRAW\_CELL} \\
+3 & \texttt{MOV} directo a memoria & Actualización de variables. & \texttt{MOVE\_SNAKE}, \texttt{INIT\_GAME} \\
+3 & \texttt{MOV} indirecto & \texttt{[BX]} sobre \texttt{board}; \texttt{[SI]} sobre \texttt{queue}. & \texttt{CHECK\_COLLISION} (\texttt{[BX]}); \texttt{MOVE\_SNAKE}, \texttt{SPAWN\_FOOD} (\texttt{[SI]}) \\
+3 & \texttt{org 100h}; \texttt{XCHG BX,DI} & Origen del formato COM; intercambio de registros. & Inicio del programa; \texttt{MOVE\_SNAKE} \\
+4 & \texttt{CMP}, \texttt{JE}, \texttt{JNE}, \texttt{JB}, \texttt{JAE} & Decisiones de teclas, límites y estados de celda. & Todo el código \\
+4 & \texttt{JMP} & Saltos incondicionales y repetición del bucle. & \texttt{MOVE\_SNAKE}, \texttt{main\_loop} \\
+4 & \texttt{LOOP} & Bucles con contador. & \texttt{DRAW\_BORDER}, \texttt{SPAWN\_FOOD}, \texttt{PRINT\_NUM} \\
+4 & \texttt{CALL}/\texttt{RET} & Invocación de procedimientos. & Todos los procedimientos \\
+5 & \texttt{MUL} de 8 bits & Cálculo de $\text{fila}\times 40+\text{columna}$. & \texttt{CHECK\_COLLISION} \\
+5 & \texttt{MUL} de 16 bits & Multiplicación de la semilla. & \texttt{SPAWN\_FOOD} \\
+5 & \texttt{DIV} de 8 bits & Conversión de índice a fila y columna. & \texttt{DRAW\_CELL} \\
+5 & \texttt{DIV} de 16 bits & Dígitos decimales; resto módulo~400. & \texttt{PRINT\_NUM}, \texttt{SPAWN\_FOOD} \\
+5 & \texttt{INC}/\texttt{DEC} & Desplazamiento de la cabeza. & \texttt{MOVE\_SNAKE} \\
+5 & \texttt{PUSH}/\texttt{POP} & Preservación de registros. & Todos los procedimientos \\
+5 & \texttt{EQU}, \texttt{DB}, \texttt{DW} & Constantes y datos. & Segmento de datos \\
+\end{longtable}
+
+\section{Funcionamiento}
+
+\subsection{Bucle principal}\label{sec:bucle}
+El programa inicializa el juego, dibuja el borde, genera la primera comida y entra en el bucle principal. En cada iteración, el programa ejecuta, en este orden: \texttt{READ\_KEY}, \texttt{MOVE\_SNAKE}, verificación de \texttt{AL=1} (choque) y \texttt{DELAY}; luego repite. El orden importa: leer la tecla antes de mover garantiza que el movimiento use la dirección más reciente, y el retardo al final fija el ritmo del juego. El Listado~\ref{lst:bucle} muestra el bucle en pseudocódigo.
+
+\begin{lstlisting}[language={},caption={Bucle principal (pseudocódigo).},label={lst:bucle}]
+INIT_GAME
+DRAW_BORDER
+SPAWN_FOOD
+repetir:
+    READ_KEY
+    si READ_KEY indica salir: terminar
+    MOVE_SNAKE
+    si MOVE_SNAKE devolvio 1 (choque):
+        GAME_OVER
+        terminar
+    DELAY
+    volver a repetir
+\end{lstlisting}
+
+\subsection{Flujo detallado de una tecla}
+La figura de texto del Listado~\ref{lst:flujotecla} describe el recorrido desde que el usuario presiona \texttt{W} hasta que \texttt{READ\_KEY} retorna 0 con la dirección actualizada.
+
+\begin{lstlisting}[language={},caption={Flujo de una tecla en READ\_KEY.},label={lst:flujotecla}]
+Usuario presiona W
+        |
+        v
+INT 16h AH=01h  (consulta no bloqueante)
+        |
+   hay tecla? --no--> retorna 0 (sin cambio de dir)
+        |si
+        v
+INT 16h AH=00h  (consume la tecla)
+        |
+   AL = 27 (ESC)? --si--> senal de salida
+        |no
+        v
+   AL = 0 (tecla extendida)?
+     |si                         |no
+     v                            v
+   AH = 48h/50h/4Bh/4Dh?       AL = W/S/A/D (may. o min.)?
+     |si         |no            |si          |no
+     v           v              v            v
+   nueva dir   ignorar       nueva dir     ignorar
+        \_______________  ________________/
+                        \/
+        nueva == (dir+2) AND 3 ?   (giro de 180)
+            |si                  |no
+            v                    v
+        rechazar            dir = nueva
+            \________  ________/
+                     \/
+              retorna 0
+\end{lstlisting}
+
+La combinación de la Tabla~\ref{tab:teclas} y del Listado~\ref{lst:flujotecla} define el comportamiento completo del teclado.
+
+\subsection{Flujo detallado de un movimiento}
+\texttt{MOVE\_SNAKE} calcula la nueva celda de la cabeza según \texttt{dir}: incrementa o decrementa \texttt{headRow} o \texttt{headCol}. Llama a \texttt{CHECK\_COLLISION}; si hay choque, retorna \texttt{AL=1}. En caso contrario consulta \texttt{board} en la nueva celda y se bifurca:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{No come} (celda libre): encola el índice nuevo, marca \texttt{board=1}, dibuja la nueva cabeza, libera la celda de \texttt{tail} (\texttt{board=0}), la borra de pantalla y avanza \texttt{tail}.
+  \item \textbf{Come} (\texttt{board=2}): se desvía a \texttt{ms\_eat}; se detalla más adelante.
+\end{itemize}
+
+\paragraph{Micro-traza: presiono \texttt{W} yendo a la derecha.}
+La traza usa marcas de tiempo ilustrativas dentro de un fotograma de unos 110~ms. Las celdas iniciales son $219=5\cdot 40+19$, $220=5\cdot 40+20$ y $221=5\cdot 40+21$; la nueva cabeza será $181=4\cdot 40+21$.
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{T=0~ms.} El usuario presiona \texttt{W}. Estado: \texttt{dir}=1, \texttt{headRow}=5, \texttt{headCol}=21, \texttt{queue}=[219, 220, 221], \texttt{head}=3, \texttt{tail}=0, \texttt{board[219]}=1, \texttt{board[181]}=0, \texttt{score}=0. La tecla permanece en el búfer del BIOS.
+  \item \textbf{T=50~ms.} \texttt{DELAY} sigue esperando; el estado no cambia.
+  \item \textbf{T=110~ms.} Comienza el fotograma siguiente. \texttt{READ\_KEY} consume \texttt{W}; la nueva dirección es 0 y $(1+2)\ \texttt{AND}\ 3=3\neq 0$, de modo que no es giro de $180^\circ$ y \texttt{dir} pasa de 1 a 0.
+  \item \textbf{T$\approx$110~ms, después de \texttt{MOVE\_SNAKE}.} \texttt{headRow} pasa de 5 a 4; \texttt{headCol} permanece en 21; el índice nuevo es $181=4\cdot 40+21$. La cola lógica pasa de [219, 220, 221] a [220, 221, 181]; \texttt{head} pasa de 3 a 4 y \texttt{tail} de 0 a 1. Además, \texttt{board[219]}=0, \texttt{board[181]}=1 y \texttt{score}=0.
+\end{itemize}
+
+\subsection{Flujo detallado de ``comer''}
+Cuando \texttt{board[idx]} vale 2, \texttt{MOVE\_SNAKE} se desvía a la etiqueta \texttt{ms\_eat}. Allí incrementa \texttt{score}, invoca \texttt{PRINT\_NUM} para actualizar el puntaje en pantalla y \texttt{SPAWN\_FOOD} para generar la siguiente comida. Se encola el índice \texttt{idx} como nueva cabeza, pero \textbf{no se avanza} \texttt{tail}: la cola no se libera y, por tanto, la serpiente crece un segmento.
+
+\subsection{Flujo detallado de un choque}
+Considérese la cabeza en \texttt{headRow}=0 con \texttt{dir}=0 (arriba). \texttt{DEC DH} convierte la fila candidata en \texttt{255}. \texttt{CHECK\_COLLISION} compara con \texttt{BOARD\_H}=10 y, al ser \texttt{JAE} una comparación sin signo, $255\geq 10$ se cumple; la rutina devuelve \texttt{AL=1}. \texttt{MOVE\_SNAKE} propaga ese valor y el bucle principal invoca \texttt{GAME\_OVER}. Con \texttt{JGE}, \texttt{255} se interpretaría como $-1$ y no se detectaría la pared; por eso se usa \texttt{JAE}.
+
+\section{Pseudocódigo}
+Los siguientes listados describen cada procedimiento en lenguaje de alto nivel. Los nombres de procedimientos van en mayúsculas y las variables en minúsculas. Los listados no incluyen direcciones ni registros.
+
+\subsection{Bucle principal}
+Véase el Listado~\ref{lst:bucle}.
+
+\subsection{INIT\_GAME}
+\begin{lstlisting}[language={},caption={Pseudocódigo de INIT\_GAME.},label={lst:p-init}]
+INIT_GAME:
+    poner en libre todas las celdas de board
+    head = 0
+    tail = 0
+    dir = derecha
+    score = 0
+    headRow = 5
+    para col desde 19 hasta 21:
+        marcar board[5*40 + col] como serpiente
+        encolar el indice en queue
+        dibujar la celda de serpiente
+    headCol = 21
+\end{lstlisting}
+
+\subsection{DRAW\_BORDER}
+\begin{lstlisting}[language={},caption={Pseudocódigo de DRAW\_BORDER.},label={lst:p-border}]
+DRAW_BORDER:
+    para cada columna del marco:
+        dibujar borde superior e inferior
+    para cada fila del marco:
+        dibujar borde izquierdo y derecho
+\end{lstlisting}
+
+\subsection{READ\_KEY}
+\begin{lstlisting}[language={},caption={Pseudocódigo de READ\_KEY.},label={lst:p-read}]
+READ_KEY:
+    si no hay tecla en el buffer:
+        retornar 0
+    leer y consumir la tecla
+    si es ESC:
+        indicar salida
+    si es flecha o WASD (mayuscula o minuscula):
+        nueva = direccion correspondiente
+        si nueva es la opuesta de dir:
+            ignorar
+        si no:
+            dir = nueva
+    retornar 0
+\end{lstlisting}
+
+\subsection{CHECK\_COLLISION}
+\begin{lstlisting}[language={},caption={Pseudocódigo de CHECK\_COLLISION.},label={lst:p-check}]
+CHECK_COLLISION:
+    si fila no es menor que alto del tablero:
+        retornar 1
+    si columna no es menor que ancho del tablero:
+        retornar 1
+    idx = fila * 40 + columna
+    si board[idx] es serpiente:
+        retornar 1
+    retornar 0
+\end{lstlisting}
+
+\subsection{MOVE\_SNAKE}
+\begin{lstlisting}[language={},caption={Pseudocódigo de MOVE\_SNAKE.},label={lst:p-move}]
+MOVE_SNAKE:
+    calcular nueva fila y nueva columna segun dir
+    si CHECK_COLLISION indica choque:
+        retornar 1
+    idx = nueva fila * 40 + nueva columna
+    si board[idx] es comida:
+        score = score + 1
+        PRINT_NUM
+        encolar idx
+        board[idx] = serpiente
+        dibujar nueva cabeza
+        SPAWN_FOOD
+    si no:
+        encolar idx
+        board[idx] = serpiente
+        dibujar nueva cabeza
+        antigua = elemento en tail
+        board[antigua] = libre
+        borrar la celda antigua en pantalla
+        avanzar tail circularmente
+    actualizar headRow y headCol
+    retornar 0
+\end{lstlisting}
+
+\subsection{SPAWN\_FOOD}
+\begin{lstlisting}[language={},caption={Pseudocódigo de SPAWN\_FOOD.},label={lst:p-spawn}]
+SPAWN_FOOD:
+    repetir hasta 1000 intentos:
+        seed = seed * 25173 + 13849
+        pos = seed modulo 400
+        si board[pos] es libre:
+            board[pos] = comida
+            dibujar comida
+            retornar
+    retornar sin generar comida
+\end{lstlisting}
+
+\subsection{DRAW\_CELL}
+\begin{lstlisting}[language={},caption={Pseudocódigo de DRAW\_CELL.},label={lst:p-draw}]
+DRAW_CELL:
+    fila = idx dividido 40
+    columna = resto de idx dividido 40
+    posicionar cursor en (fila + 2, columna + 20)
+    escribir caracter con su color
+\end{lstlisting}
+
+\subsection{PRINT\_NUM}
+\begin{lstlisting}[language={},caption={Pseudocódigo de PRINT\_NUM.},label={lst:p-print}]
+PRINT_NUM:
+    posicionar cursor tras la etiqueta de puntaje
+    obtener los digitos de score dividiendo entre 10
+    imprimir los digitos de izquierda a derecha
+    imprimir espacios de relleno
+\end{lstlisting}
+
+\subsection{DELAY}
+\begin{lstlisting}[language={},caption={Pseudocódigo de DELAY.},label={lst:p-delay}]
+DELAY:
+    inicio = ticks del reloj
+    mientras (ticks actuales - inicio) < delayTicks:
+        consultar ticks del reloj
+\end{lstlisting}
+
+\subsection{GAME\_OVER}
+\begin{lstlisting}[language={},caption={Pseudocódigo de GAME\_OVER.},label={lst:p-over}]
+GAME_OVER:
+    mostrar GAME OVER! en la fila 14
+    mostrar el puntaje final
+    esperar una tecla
+\end{lstlisting}
+
+\subsection{Pseudocódigo del programa completo}
+\begin{lstlisting}[language={},caption={Pseudocódigo del programa completo.},label={lst:p-total}]
+programa Snake:
+    INIT_GAME
+    DRAW_BORDER
+    SPAWN_FOOD
+    mientras verdadero:
+        READ_KEY
+        si hubo ESC:
+            restaurar video y cursor
+            terminar
+        MOVE_SNAKE
+        si hubo choque:
+            GAME_OVER
+            restaurar video y cursor
+            terminar
+        DELAY
+\end{lstlisting}
+
+\section{Análisis de rendimiento}
+
+\subsection{¿Por qué el juego es ``lento''?}
+El tiempo de un fotograma lo domina el procedimiento \texttt{DELAY}. Con \texttt{delayTicks}=2 y un reloj del BIOS de unos 18,2~ticks por segundo, el retardo es
+\[
+2\times\frac{1}{18{,}2}\ \text{s}\approx 0{,}1099\ \text{s},
+\]
+es decir, unos 110~ms, lo que equivale a unos 9~fotogramas por segundo. Esa espera representa aproximadamente el 95\% del tiempo de cada fotograma.
+
+\subsection{Presupuesto de ciclos por fotograma}
+La Tabla~\ref{tab:rendimiento} resume los factores. Las instrucciones aritméticas más costosas en el 8086 son \texttt{MUL} de 8 bits (unos 70--77 ciclos), \texttt{MUL} de 16 bits (118--133), \texttt{DIV} de 8 bits (80--90) y \texttt{DIV} de 16 bits (144--162). En un fotograma normal se ejecutan aproximadamente un \texttt{MUL} y dos \texttt{DIV}, lo que suma unos 260 ciclos; como referencia, a 4,77~MHz esa cifra equivale a menos de 0,1~ms, despreciable frente a los 110~ms del retardo.
+
+\begin{table}[ht]
+\centering
+\caption{Factores de costo por fotograma.}
+\label{tab:rendimiento}
+\begin{tabular}{@{}p{3.6cm}p{6.2cm}p{2.6cm}@{}}
+\toprule
+Factor & Costo por frame & ¿Cuello de botella? \\
+\midrule
+\texttt{DELAY} & $\approx 110$~ms (2 ticks). & Sí (deliberado). \\
+\texttt{MUL}/\texttt{DIV} & $\approx 260$ ciclos (1 \texttt{MUL} + 2 \texttt{DIV}). & No. \\
+\texttt{INT 10h} & 4 llamadas por fotograma en \texttt{DRAW\_CELL}. & No. \\
+\texttt{INT 16h} & 0 a 2 llamadas por fotograma. & No. \\
+\texttt{INT 1Ah} & Repetida dentro de \texttt{DELAY} mientras espera. & Parte del retardo. \\
+\texttt{INT 21h} & Solo en \texttt{PRINT\_NUM}, al comer. & No. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cuellos de botella identificados}
+El único cuello de botella es el retardo programado. Las cuatro llamadas a \texttt{INT 10h} (dos por cada invocación de \texttt{DRAW\_CELL}, para la nueva cabeza y para la cola borrada) y las lecturas de \texttt{INT 16h} cuestan poco frente a \texttt{DELAY}. El costo de \texttt{INT 21h} en \texttt{PRINT\_NUM} solo aparece al comer y no afecta la fluidez. En conclusión, la lentitud es una decisión de diseño (\texttt{delayTicks} calibrado a $\approx 9$~fps), no una limitación del 8086 ni del ensamblador.
+
+\section{Limitaciones y consideraciones}
+
+\subsection{Limitaciones funcionales del juego}
+\begin{longtable}{@{}p{4.2cm}p{9.2cm}@{}}
+\caption{Limitaciones funcionales.}\label{tab:limfun}\\
+\toprule
+Limitación & Descripción \\
+\midrule
+\endfirsthead
+\toprule
+Limitación & Descripción \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Tablero lleno sin victoria & No existe condición de victoria cuando la serpiente ocupa todo el tablero. \\
+Celda de la cola & La celda de la cola cuenta como colisión, aunque en ese instante quedaría libre. \\
+Sin reinicio & Tras \texttt{GAME\_OVER} no se ofrece jugar de nuevo. \\
+Sin récord & No se conserva la mejor puntuación. \\
+Velocidad fija & \texttt{delayTicks} no cambia durante la partida. \\
+Sin pausa & No hay tecla de pausa. \\
+Sin sonido & No se emite ningún sonido. \\
+Semilla repetible & La semilla puede repetirse entre ejecuciones y producir la misma secuencia de comida (condición por confirmar). \\
+\end{longtable}
+
+\subsection{Limitaciones técnicas del código}
+\begin{longtable}{@{}p{4.2cm}p{9.2cm}@{}}
+\caption{Limitaciones técnicas.}\label{tab:limtec}\\
+\toprule
+Limitación & Descripción \\
+\midrule
+\endfirsthead
+\toprule
+Limitación & Descripción \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{SPAWN\_FOOD} falla en silencio & Tras 1000 intentos sin celda libre, retorna sin comida y sin avisar. \\
+\texttt{DRAW\_CELL} & Asume un índice de celda $\leq 399$; no valida el rango. \\
+\texttt{CHECK\_COLLISION} & Es frágil ante un cambio de \texttt{JAE} a \texttt{JGE}, que dejaría de detectar las paredes. \\
+\texttt{queue} no se reinicia & Los valores antiguos permanecen; solo \texttt{head} y \texttt{tail} definen el contenido válido. \\
+\texttt{READ\_KEY} & Ignora las teclas de función y otras teclas no previstas. \\
+\texttt{PRINT\_NUM} & Deja tres espacios tras el número impreso. \\
+\end{longtable}
+
+\subsection{Limitaciones de portabilidad y entorno}
+\begin{table}[ht]
+\centering
+\caption{Limitaciones de portabilidad.}
+\label{tab:portabilidad}
+\begin{tabular}{@{}p{4.2cm}p{9.2cm}@{}}
+\toprule
+Aspecto & Descripción \\
+\midrule
+Plataforma & Diseñado para EMU8086 y DOS; no se garantiza en otros entornos. \\
+Formato COM & Tamaño máximo de 64~KB. \\
+\texttt{INT 1Ah} & Su comportamiento puede diferir en hardware real. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cosas a tener en cuenta al exponer}
+Se anticipan las siguientes preguntas durante la exposición:
+\begin{itemize}[leftmargin=*]
+  \item \textbf{¿Por qué \texttt{JAE} y no \texttt{JGE}?} Porque \texttt{DEC} sobre cero deja \texttt{255}, que con signo vale $-1$ y pasaría la verificación; sin signo, \texttt{255} supera el límite.
+  \item \textbf{¿Por qué \texttt{XOR DX,DX} antes de \texttt{DIV}?} Porque la \texttt{DIV} de 16 bits divide \texttt{DX:AX}; si \texttt{DX} conserva basura, el cociente puede desbordar o el resultado ser incorrecto.
+  \item \textbf{¿Por qué \texttt{CX=2000h} oculta el cursor?} Porque en \texttt{INT 10h}, \texttt{AH=01h}, el bit~5 de \texttt{CH} desactiva el cursor. (Ubicación exacta en el código por confirmar.)
+  \item \textbf{¿Por qué \texttt{PUSH AX} dos veces en \texttt{DRAW\_CELL}?} Respuesta por confirmar contra el listado: debe explicar qué valor protege cada \texttt{PUSH} frente al \texttt{DIV} de 8 bits y a \texttt{INT 10h}.
+  \item \textbf{¿Por qué \texttt{SPAWN\_FOOD} no se cuelga con el tablero lleno?} Porque el bucle con \texttt{LOOP} tiene un máximo de 1000 intentos y luego retorna.
+  \item \textbf{¿Por qué la cola es circular y no se desplazan datos?} Para evitar el \texttt{memmove}: solo cambian los índices \texttt{head} y \texttt{tail}.
+  \item \textbf{¿Qué bandera decide \texttt{JE}/\texttt{JNE} y cuál \texttt{JB}/\texttt{JAE}?} \texttt{ZF} decide \texttt{JE}/\texttt{JNE}; \texttt{CF} decide \texttt{JB}/\texttt{JAE}.
+\end{itemize}
+
+\subsection{Posibles mejoras futuras}
+Entre las mejoras posibles, que \emph{no} forman parte del programa actual, se cuentan: velocidad progresiva, reinicio con la tecla \texttt{R}, récord en disco, cabeza diferenciada del cuerpo, sonido con \texttt{INT 10h} \texttt{AH=0Eh}, pausa con la tecla \texttt{P} y tablero configurable mediante \texttt{EQU}.
+
+\section{Pruebas y validación}
+
+\subsection{Lista de verificación}
+\begin{itemize}[leftmargin=*,label={}]
+    \item[\texttt{[ ]}] La comida aparece en posiciones distintas entre partidas.
+    \item[\texttt{[ ]}] Las flechas y las teclas WASD (mayúsculas y minúsculas) cambian la dirección.
+    \item[\texttt{[ ]}] El giro de $180^\circ$ es rechazado.
+    \item[\texttt{[ ]}] El choque con la pared funciona en los cuatro lados.
+    \item[\texttt{[ ]}] El choque con el propio cuerpo termina la partida.
+    \item[\texttt{[ ]}] Al comer, la serpiente crece un segmento.
+    \item[\texttt{[ ]}] El puntaje se muestra correctamente con 0, 1, 2 y 3 cifras.
+    \item[\texttt{[ ]}] \texttt{ESC} sale del programa y restaura el cursor.
+    \item[\texttt{[ ]}] El borde del tablero se mantiene intacto durante el juego.
+    \item[\texttt{[ ]}] Se muestra ``GAME OVER!'' con el puntaje final.
+    \item[\texttt{[ ]}] No hay parpadeo de pantalla completa.
+\end{itemize}
+
+\subsection{Procedimiento de prueba recomendado}
+\begin{enumerate}[leftmargin=*]
+  \item Abrir \texttt{snake.asm} en EMU8086 y ensamblarlo sin errores.
+  \item Ejecutar el programa en el emulador y comprobar que se dibuja el borde, la serpiente inicial y la comida.
+  \item Jugar durante unos 30 segundos probando flechas y WASD.
+  \item Verificar el rechazo del giro de $180^\circ$.
+  \item Provocar choques con cada una de las cuatro paredes y con el cuerpo.
+  \item Comer varias veces y observar el crecimiento y el puntaje con una, dos y tres cifras.
+  \item Verificar \texttt{GAME\_OVER} y la espera de tecla.
+  \item Repetir y salir con \texttt{ESC}; confirmar que el cursor y el modo de video se restauran.
+  \item Marcar cada ítem de la lista de verificación.
+\end{enumerate}
+
+\section{Anexos}
+
+\subsection{Código fuente completo (snake.asm)}
+\IfFileExists{snake.asm}{%
+    El Listado~\ref{lst:snake} incluye el código fuente completo.
+    \lstinputlisting[numbers=left,caption={snake.asm},label={lst:snake}]{snake.asm}%
+}{%
+    El archivo \texttt{snake.asm} no está disponible en esta carpeta; por ello,
+    no se puede incluir el código fuente en este anexo.%
+}
+
+\subsection{Tabla de variables y estructuras}
+La Tabla~\ref{tab:variablesB} repite la Tabla~\ref{tab:variables} en formato de varias páginas.
+
+\begin{longtable}{@{}p{2.8cm}p{1.4cm}p{2.2cm}p{6.8cm}@{}}
+\caption{Constantes y variables (Anexo B).}\label{tab:variablesB}\\
+\toprule
+Nombre & Tipo & Tamaño & Uso \\
+\midrule
+\endfirsthead
+\toprule
+Nombre & Tipo & Tamaño & Uso \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{BOARD\_W} & \texttt{EQU} & --- & Ancho: 40. \\
+\texttt{BOARD\_H} & \texttt{EQU} & --- & Alto: 10. \\
+\texttt{BOARD\_SIZE} & \texttt{EQU} & --- & Celdas: 400. \\
+\texttt{board} & \texttt{DB} & 400 bytes & Estado de celdas (0 libre, 1 serpiente, 2 comida). \\
+\texttt{queue} & \texttt{DW} & 400 palabras & Cola circular de índices. \\
+\texttt{head} & \texttt{DW} & 1 palabra & Índice de escritura. \\
+\texttt{tail} & \texttt{DW} & 1 palabra & Índice de lectura. \\
+\texttt{dir} & \texttt{DB} & 1 byte & Dirección (0 a 3). \\
+\texttt{headRow} & \texttt{DB} & 1 byte & Fila de la cabeza. \\
+\texttt{headCol} & \texttt{DB} & 1 byte & Columna de la cabeza. \\
+\texttt{score} & \texttt{DW} & 1 palabra & Puntaje. \\
+\texttt{seed} & \texttt{DW} & 1 palabra & Semilla del generador. \\
+\texttt{delayTicks} & \texttt{DB} & 1 byte & Ticks de espera (2). \\
+\texttt{msgScore} & \texttt{DB} & cadena & ``Puntaje: ''. \\
+\texttt{msgGameOver} & \texttt{DB} & cadena & ``GAME OVER!''. \\
+\end{longtable}
+
+\subsection{Tabla de servicios BIOS/DOS usados}
+La Tabla~\ref{tab:servicios} lista los servicios del sistema. Las funciones marcadas con asterisco están pendientes de confirmar contra el código fuente.
+
+\begin{longtable}{@{}p{1.4cm}p{1.8cm}p{5.2cm}p{4.6cm}@{}}
+\caption{Servicios BIOS y DOS empleados.}\label{tab:servicios}\\
+\toprule
+INT & AH & Función & Dónde se usa \\
+\midrule
+\endfirsthead
+\toprule
+INT & AH & Función & Dónde se usa \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\texttt{10h} & \texttt{01h} & Fijar forma del cursor (\texttt{CX=0607h} restaura; \texttt{CX=2000h} oculta). & Salida del programa; inicio (por confirmar). \\
+\texttt{10h} & \texttt{00h}* & Fijar modo de video. & Inicio y salida. \\
+\texttt{10h} & \texttt{02h}* & Posicionar el cursor. & \texttt{DRAW\_CELL}, \texttt{DRAW\_BORDER}. \\
+\texttt{10h} & \texttt{09h}* & Escribir carácter con atributo. & \texttt{DRAW\_CELL}. \\
+\texttt{16h} & \texttt{01h} & Consultar teclado sin bloquear. & \texttt{READ\_KEY}. \\
+\texttt{16h} & \texttt{00h} & Leer y consumir tecla. & \texttt{READ\_KEY}, \texttt{GAME\_OVER}. \\
+\texttt{1Ah} & \texttt{00h} & Leer contador de ticks. & \texttt{DELAY}. \\
+\texttt{21h} & * & Salida de caracteres o cadenas. & \texttt{PRINT\_NUM}, mensajes. \\
+\end{longtable}
+
+\subsection{Referencias}
+\begin{thebibliography}{9}
+  \bibitem{emu8086} EMU8086 Microprocessor Emulator, \emph{Manual de usuario}. (Edición y versión por confirmar.)
+  \bibitem{brown} Brown, R. \emph{Ralf Brown's Interrupt List} (INT 10h, INT 16h, INT 1Ah, INT 21h).
+  \bibitem{guia} Universidad Nacional de San Agustín de Arequipa, Escuela Profesional de Ingeniería de Sistemas. \emph{Guía de prácticas de Arquitectura de Computadoras}. (Edición por confirmar.)
+\end{thebibliography}
+
+\section*{Notas para el autor}
+Los siguientes puntos requieren confirmación humana antes de la entrega:
+\begin{enumerate}[leftmargin=*]
+  \item El archivo \texttt{snake.asm} no estaba disponible al redactar este documento. El Anexo~A usa \texttt{\textbackslash lstinputlisting\{snake.asm\}}: coloque el archivo en la misma carpeta o pegue su contenido literal en un \texttt{lstlisting}.
+  \item La versión exacta de EMU8086 no se indicó en la fuente (Tabla~\ref{tab:herramientas}).
+  \item La lista exacta de registros modificados y preservados con \texttt{PUSH}/\texttt{POP} de cada procedimiento no estaba definida (Tabla~\ref{tab:fichas}).
+  \item Los números de función \texttt{AH} marcados con asterisco en la Tabla~\ref{tab:servicios}, la forma exacta de terminar el programa y las funciones de \texttt{INT 21h} deben verificarse en el código.
+  \item El lugar del código donde se aplica \texttt{CX=2000h} y la razón del doble \texttt{PUSH AX} en \texttt{DRAW\_CELL} deben confirmarse antes de la exposición.
+  \item Las marcas de tiempo de la micro-traza son ilustrativas; los valores de las variables sí provienen de la especificación.
+  \item Debe confirmarse cómo se inicializa \texttt{seed} (afecta la limitación ``semilla repetible'').
+  \item Las referencias bibliográficas requieren edición, año y versión definitivos; las prácticas del curso se nombraron según el enunciado proporcionado.
+\end{enumerate}
+
+\end{document}
