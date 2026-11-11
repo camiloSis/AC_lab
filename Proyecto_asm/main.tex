@@ -192,7 +192,7 @@
 \section{Actividades}
 
 \subsection{Descripción de la actividad}
-Implementación del clásico juego \textbf{Snake} para procesador 8086, escrita para el emulador EMU8086 y ensamblada como programa de formato COM. El documento se limita a describir lo que el código fuente \texttt{snake.asm} contiene; no propone cambios al programa ni atribuye funcionalidades que este no posea. Cuando un dato no está definido con certeza, el texto lo indica y la sección \emph{Notas para el autor}, al final del documento, lo enumera como pendiente de confirmar.
+Implementación del clásico juego \textbf{Snake} para procesador 8086, escrita para el emulador EMU8086 y ensamblada como programa de formato COM. El documento se limita a describir lo que el código fuente \texttt{snakeGame.asm} contiene; no propone cambios al programa ni atribuye funcionalidades que este no posea. Cuando un dato no está definido con certeza, el texto lo indica y la sección \emph{Notas para el autor}, al final del documento, lo enumera como pendiente de confirmar.
 
 \subsection{Objetivos}
 El objetivo general es construir un juego funcional en ensamblador 8086 y documentarlo con rigor técnico. Los objetivos específicos son los siguientes:
@@ -201,7 +201,7 @@ El objetivo general es construir un juego funcional en ensamblador 8086 y docume
   \item Aplicar la \textbf{Práctica 3} (modos de direccionamiento): direccionamiento inmediato, de registro, directo e indirecto por registro.
   \item Aplicar la \textbf{Práctica 4} (control de flujo): comparaciones, saltos condicionales e incondicionales, bucles con \texttt{LOOP} y llamadas a procedimientos con \texttt{CALL}/\texttt{RET}.
   \item Aplicar la \textbf{Práctica 5} (operaciones aritméticas y pila): \texttt{MUL}, \texttt{DIV}, \texttt{INC}, \texttt{DEC}, \texttt{PUSH}, \texttt{POP}, constantes con \texttt{EQU} y datos con \texttt{DB}/\texttt{DW}.
-  \item Utilizar los servicios del BIOS (\texttt{INT 10h}, \texttt{INT 16h}, \texttt{INT 1Ah}) y de DOS (\texttt{INT 21h}) para pantalla, teclado y temporización.
+    \item Utilizar los servicios del BIOS (\texttt{INT 10h}, \texttt{INT 16h} y el servicio de temporización que use \texttt{DELAY}) y de DOS (\texttt{INT 21h}) para pantalla, teclado y temporización.
   \item Documentar el diseño, el funcionamiento, el rendimiento y las limitaciones del programa para su exposición en clase.
 \end{itemize}
 
@@ -217,7 +217,7 @@ El desarrollo y la verificación se realizan con las herramientas de la Tabla~\r
 Herramienta & Uso \\
 \midrule
 EMU8086 (versión pendiente de confirmar) & Edición, ensamblado y emulación del programa en formato COM. \\
-Editor de texto & Edición alternativa del código fuente \texttt{snake.asm}. \\
+Editor de texto & Edición alternativa del código fuente \texttt{snakeGame.asm}. \\
 DOSBox (opcional) & Ejecución alternativa del archivo COM generado. \\
 \bottomrule
 \end{tabular}
@@ -226,7 +226,7 @@ DOSBox (opcional) & Ejecución alternativa del archivo COM generado. \\
 \subsection{Alcance y entregables}
 El alcance comprende un único juego de un jugador, con tablero fijo de 40 columnas por 10 filas, sin pausa, sin sonido y sin reinicio. Los entregables son tres:
 \begin{enumerate}[leftmargin=*]
-  \item \texttt{snake.asm}: código fuente completo del juego.
+    \item \texttt{snakeGame.asm}: código fuente completo del juego.
   \item \texttt{descripcion.md}: descripción breve del proyecto.
   \item Este documento (\texttt{Snake\_Game.tex}), que documenta el diseño y la implementación.
 \end{enumerate}
@@ -263,10 +263,11 @@ Tras \texttt{CMP}, las instrucciones \texttt{JL}/\texttt{JGE} interpretan el res
 \subsection{Modo texto 80x25 y servicios BIOS (INT 10h)}
 En modo texto de 80 columnas por 25 filas, la memoria de video comienza en la dirección \texttt{B800:0000}; cada celda ocupa dos bytes (carácter y atributo de color). Escribir directamente en esa memoria sería la opción más rápida. Este prototipo emplea en cambio la interrupción \texttt{INT 10h} del BIOS, que es más sencilla de explicar y de verificar: es una decisión didáctica, no óptima. Los servicios utilizados se resumen en el Anexo~C (Tabla~\ref{tab:servicios}). Los atributos de color usados son \texttt{07h} (gris, borde), \texttt{0Ah} (verde, serpiente) y \texttt{0Ch} (rojo, comida).
 
-\subsection{Lectura de teclado (INT 16h) y reloj del BIOS (INT 1Ah)}
+\subsection{Lectura de teclado y temporización}
 La función \texttt{AH=01h} de \texttt{INT 16h} consulta el búfer de teclado \emph{sin bloquear}: indica mediante \texttt{ZF} si hay una tecla pendiente. La función \texttt{AH=00h} extrae la tecla del búfer; para teclas extendidas, como las flechas, devuelve \texttt{AL=0} y el código de exploración (\emph{scancode}) en \texttt{AH}.
 
-La función \texttt{AH=00h} de \texttt{INT 1Ah} devuelve el contador de ticks del reloj del BIOS en \texttt{CX:DX}. Este contador avanza aproximadamente 18,2 veces por segundo; el procedimiento \texttt{DELAY} lo emplea como base de tiempo.
+% REVISAR: snakeGame.asm no está disponible en el workspace ni en el árbol Git consultado; confirmar cuál servicio usa DELAY.
+Si \texttt{DELAY} consulta los ticks del BIOS, \texttt{INT 1Ah}, \texttt{AH=00h}, devuelve el contador en \texttt{CX:DX}, con una resolución aproximada de 55~ms. La alternativa es \texttt{INT 15h}, \texttt{AH=86h}, que solicita una espera usando \texttt{CX:DX} como intervalo en microsegundos; con \texttt{CX=0001h} y \texttt{DX=86A0h}, el valor solicitado es nominalmente 100~ms. No se ha verificado cuál variante está en el código vigente ni el comportamiento de \texttt{INT 15h AH=86h} en EMU8086; 100~ms no es una medición.
 
 \subsection{Servicios DOS (INT 21h)}
 La interrupción \texttt{INT 21h} ofrece los servicios del sistema operativo. En este programa interviene en la impresión de caracteres o cadenas, en particular en \texttt{PRINT\_NUM}, que solo se ejecuta cuando la serpiente come. El detalle de las funciones empleadas se resume en el Anexo~C.
@@ -337,7 +338,8 @@ Nombre & Tipo & Tamaño & Uso \\
 \texttt{headCol} & \texttt{DB} & 1 byte & Columna de la cabeza. \\
 \texttt{score} & \texttt{DW} & 1 palabra & Puntaje. \\
 \texttt{seed} & \texttt{DW} & 1 palabra & Semilla del generador pseudoaleatorio. \\
-\texttt{delayTicks} & \texttt{DB} & 1 byte & Ticks de espera por fotograma (valor 2). \\
+% REVISAR: comprobar en snakeGame.asm si delayTicks está declarado y si DELAY lo consulta; si existe pero no se usa, indicarlo como variable sin uso.
+\texttt{delayTicks} & Por verificar & Por verificar & Confirmar si está declarada y se consulta en \texttt{DELAY}; si la versión usa \texttt{INT 15h AH=86h} y la variable existe pero no se consulta, documentarla como sin uso. \\
 \texttt{msgScore} & \texttt{DB} & cadena & Texto ``Puntaje: ''. \\
 \texttt{msgGameOver} & \texttt{DB} & cadena & Texto ``GAME OVER!''. \\
 \bottomrule
@@ -367,7 +369,8 @@ Procedimiento & Entradas & Salidas & Resumen \\
 \texttt{SPAWN\_FOOD} & \texttt{seed}, \texttt{board}. & Comida en una celda libre (o ninguna, tras 1000 intentos). & Genera posiciones pseudoaleatorias hasta hallar una celda libre. \\
 \texttt{DRAW\_CELL} & Índice de celda, carácter y atributo. & Celda dibujada. & Convierte índice a fila y columna con \texttt{DIV}, posiciona el cursor y escribe el carácter con \texttt{INT 10h}. \\
 \texttt{PRINT\_NUM} & Número (puntaje). & Número impreso. & Descompone el número en dígitos con \texttt{DIV} y los imprime con \texttt{INT 21h}. \\
-\texttt{DELAY} & \texttt{delayTicks}. & Ninguna. & Espera el número de ticks indicado leyendo \texttt{INT 1Ah}. \\
+% REVISAR: el contrato concreto depende de la variante de DELAY presente en snakeGame.asm.
+\texttt{DELAY} & Ninguna externa; parámetros internos por confirmar. & Ninguna. & Realiza la espera explícita del fotograma; confirmar si consulta ticks con \texttt{INT 1Ah} o solicita una pausa con \texttt{INT 15h AH=86h}. \\
 \texttt{GAME\_OVER} & \texttt{score}. & Mensaje y puntaje final. & Muestra ``GAME OVER!'' y el puntaje en la fila~14 y espera una tecla. \\
 \end{longtable}
 
@@ -390,6 +393,8 @@ El diseño evolucionó mediante decisiones de incorporación (altas) y de descar
 
 \emph{Sonido y pausa.} Quedaron fuera del alcance: no forman parte de los objetivos del curso y habrían incrementado el tamaño y la superficie de pruebas del programa.
 
+\emph{Corrección al comer.} Se corrigió la conservación de \texttt{BX} (índice de la nueva cabeza) y \texttt{DX} (coordenadas) alrededor de la llamada a \texttt{INT 10h AH=02h} que posiciona el cursor del puntaje. Antes, los valores de \texttt{BH}, \texttt{DH} y \texttt{DL} sobrescribían esos registros: la cabeza lógica saltaba a (0,28), la comida podía permanecer dibujada y generarse una segunda semilla, y la serpiente reaparecía desplazada. La corrección guarda ambos registros con \texttt{PUSH} antes de la llamada y los restaura con \texttt{POP} después de \texttt{PRINT\_NUM}, antes de \texttt{SPAWN\_FOOD}. % REVISAR: el ASM real no está disponible para verificar el orden exacto de las instrucciones.
+
 \subsection{Decisiones de implementación destacadas}
 \begin{itemize}[leftmargin=*]
   \item \textbf{Comparación sin signo.} La detección de paredes usa \texttt{CMP} con \texttt{JAE}, porque \texttt{DEC} sobre una fila o columna en cero produce \texttt{255} (véase el Marco teórico).
@@ -397,13 +402,14 @@ El diseño evolucionó mediante decisiones de incorporación (altas) y de descar
   \item \textbf{Generador pseudoaleatorio.} \texttt{SPAWN\_FOOD} aplica la recurrencia $\texttt{seed}\leftarrow \texttt{seed}\cdot 25173+13849$ con \texttt{MUL} de 16 bits y obtiene la posición como $\texttt{seed}\bmod 400$ con \texttt{DIV} de 16 bits, con \texttt{DX=0} previo.
   \item \textbf{Límite de intentos.} \texttt{SPAWN\_FOOD} realiza como máximo 1000 intentos, de modo que no se cuelga si el tablero está lleno.
   \item \textbf{Salida limpia.} Al salir, el programa restaura el modo de video y el cursor mediante \texttt{INT 10h}, \texttt{AH=01h}, \texttt{CX=0607h}.
+    \item \textbf{Preservación de registros al comer.} \texttt{MOVE\_SNAKE} preserva \texttt{BX} y \texttt{DX} alrededor del posicionamiento e impresión del puntaje; esto aplica \texttt{PUSH}/\texttt{POP} para impedir que los parámetros de cursor destruyan el índice y las coordenadas del movimiento. % REVISAR: confirmar el fragmento contra snakeGame.asm.
 \end{itemize}
 
 \subsection{Tabla de rastreo: Práctica del curso a código}
 La Tabla~\ref{tab:rastreo} relaciona cada práctica con las instrucciones que realmente aparecen en el código. No se incluyen instrucciones ausentes del programa (por ejemplo, no se emplea \texttt{IMUL}). Las banderas que deciden los saltos están en la Tabla~\ref{tab:banderas}.
 
 \begin{longtable}{@{}p{1.6cm}p{3.2cm}p{4.6cm}p{3.6cm}@{}}
-\caption{Rastreo entre las prácticas del curso y el código de \texttt{snake.asm}.}\label{tab:rastreo}\\
+\caption{Rastreo entre las prácticas del curso y el código de \texttt{snakeGame.asm}.}\label{tab:rastreo}\\
 \toprule
 Práctica & Instrucción / tema & Procedimiento real del código & Procedimiento del \texttt{.asm} donde aparece \\
 \midrule
@@ -415,7 +421,7 @@ Práctica & Instrucción / tema & Procedimiento real del código & Procedimiento
 \bottomrule
 \endfoot
 2 & \texttt{ADD}/\texttt{ADC} & Suma del incremento del generador con propagación de acarreo. & \texttt{SPAWN\_FOOD} \\
-2 & \texttt{SUB} & Inicialización de valores y cálculo de ticks transcurridos. & \texttt{INIT\_GAME}, \texttt{DELAY} \\
+2 & \texttt{SUB} & Inicialización de valores y, si corresponde a la variante con ticks, cálculo del tiempo transcurrido. & \texttt{INIT\_GAME}, \texttt{DELAY} \\
 2 & \texttt{XOR} & Puesta a cero de registros. & \texttt{INIT\_GAME}, \texttt{READ\_KEY}, \texttt{CHECK\_COLLISION}, \texttt{PRINT\_NUM}, \texttt{SPAWN\_FOOD} \\
 2 & \texttt{AND 3} & Módulo~4 de la dirección opuesta. & \texttt{READ\_KEY} \\
 2 & \texttt{SHL SI,1} & Conversión de índice a desplazamiento en palabras. & \texttt{MOVE\_SNAKE} \\
@@ -433,14 +439,14 @@ Práctica & Instrucción / tema & Procedimiento real del código & Procedimiento
 5 & \texttt{DIV} de 8 bits & Conversión de índice a fila y columna. & \texttt{DRAW\_CELL} \\
 5 & \texttt{DIV} de 16 bits & Dígitos decimales; resto módulo~400. & \texttt{PRINT\_NUM}, \texttt{SPAWN\_FOOD} \\
 5 & \texttt{INC}/\texttt{DEC} & Desplazamiento de la cabeza. & \texttt{MOVE\_SNAKE} \\
-5 & \texttt{PUSH}/\texttt{POP} & Preservación de registros. & Todos los procedimientos \\
+5 & \texttt{PUSH}/\texttt{POP} & Preservación de registros; en la rama de comida se guardan \texttt{BX} y \texttt{DX} alrededor de la actualización del puntaje. & Todos los procedimientos; \texttt{MOVE\_SNAKE} (rama \texttt{ms\_eat}) \\
 5 & \texttt{EQU}, \texttt{DB}, \texttt{DW} & Constantes y datos. & Segmento de datos \\
 \end{longtable}
 
 \section{Funcionamiento}
 
 \subsection{Bucle principal}\label{sec:bucle}
-El programa inicializa el juego, dibuja el borde, genera la primera comida y entra en el bucle principal. En cada iteración, el programa ejecuta, en este orden: \texttt{READ\_KEY}, \texttt{MOVE\_SNAKE}, verificación de \texttt{AL=1} (choque) y \texttt{DELAY}; luego repite. El orden importa: leer la tecla antes de mover garantiza que el movimiento use la dirección más reciente, y el retardo al final fija el ritmo del juego. El Listado~\ref{lst:bucle} muestra el bucle en pseudocódigo.
+El programa inicializa el juego, dibuja el borde, genera la primera comida y entra en el bucle principal. En cada iteración, el programa ejecuta, en este orden: \texttt{READ\_KEY}, \texttt{MOVE\_SNAKE}, verificación de \texttt{AL=1} (choque) y \texttt{DELAY}; luego repite. El orden importa: leer la tecla antes de mover garantiza que el movimiento use la dirección más reciente. \texttt{DELAY} es la espera explícita al final del ciclo y fija el ritmo; el servicio y la duración concreta dependen de la versión del código. % REVISAR: confirmar la implementación vigente de DELAY en snakeGame.asm.
 
 \begin{lstlisting}[language={},caption={Bucle principal (pseudocódigo).},label={lst:bucle}]
 INIT_GAME
@@ -502,17 +508,17 @@ La combinación de la Tabla~\ref{tab:teclas} y del Listado~\ref{lst:flujotecla} 
 \end{itemize}
 
 \paragraph{Micro-traza: presiono \texttt{W} yendo a la derecha.}
-La traza usa marcas de tiempo ilustrativas dentro de un fotograma de unos 110~ms. Las celdas iniciales son $219=5\cdot 40+19$, $220=5\cdot 40+20$ y $221=5\cdot 40+21$; la nueva cabeza será $181=4\cdot 40+21$.
+La traza describe estados y orden de ejecución, no duraciones medidas. Las celdas iniciales son $219=5\cdot 40+19$, $220=5\cdot 40+20$ y $221=5\cdot 40+21$; la nueva cabeza será $181=4\cdot 40+21$.
 
 \begin{itemize}[leftmargin=*]
-  \item \textbf{T=0~ms.} El usuario presiona \texttt{W}. Estado: \texttt{dir}=1, \texttt{headRow}=5, \texttt{headCol}=21, \texttt{queue}=[219, 220, 221], \texttt{head}=3, \texttt{tail}=0, \texttt{board[219]}=1, \texttt{board[181]}=0, \texttt{score}=0. La tecla permanece en el búfer del BIOS.
-  \item \textbf{T=50~ms.} \texttt{DELAY} sigue esperando; el estado no cambia.
-  \item \textbf{T=110~ms.} Comienza el fotograma siguiente. \texttt{READ\_KEY} consume \texttt{W}; la nueva dirección es 0 y $(1+2)\ \texttt{AND}\ 3=3\neq 0$, de modo que no es giro de $180^\circ$ y \texttt{dir} pasa de 1 a 0.
-  \item \textbf{T$\approx$110~ms, después de \texttt{MOVE\_SNAKE}.} \texttt{headRow} pasa de 5 a 4; \texttt{headCol} permanece en 21; el índice nuevo es $181=4\cdot 40+21$. La cola lógica pasa de [219, 220, 221] a [220, 221, 181]; \texttt{head} pasa de 3 a 4 y \texttt{tail} de 0 a 1. Además, \texttt{board[219]}=0, \texttt{board[181]}=1 y \texttt{score}=0.
+    \item \textbf{Antes de la espera.} El usuario presiona \texttt{W}. Estado: \texttt{dir}=1, \texttt{headRow}=5, \texttt{headCol}=21, \texttt{queue}=[219, 220, 221], \texttt{head}=3, \texttt{tail}=0, \texttt{board[219]}=1, \texttt{board[181]}=0, \texttt{score}=0. La tecla permanece en el búfer del BIOS.
+    \item \textbf{Durante \texttt{DELAY}.} La espera explícita sigue activa; no se atribuye una duración medida y el estado del juego no cambia.
+    \item \textbf{En la iteración siguiente.} \texttt{READ\_KEY} consume \texttt{W}; la nueva dirección es 0 y $(1+2)\ \texttt{AND}\ 3=3\neq 0$, de modo que no es giro de $180^\circ$ y \texttt{dir} pasa de 1 a 0.
+    \item \textbf{Después de \texttt{MOVE\_SNAKE}.} \texttt{headRow} pasa de 5 a 4; \texttt{headCol} permanece en 21; el índice nuevo es $181=4\cdot 40+21$. La cola lógica pasa de [219, 220, 221] a [220, 221, 181]; \texttt{head} pasa de 3 a 4 y \texttt{tail} de 0 a 1. Además, \texttt{board[219]}=0, \texttt{board[181]}=1 y \texttt{score}=0.
 \end{itemize}
 
 \subsection{Flujo detallado de ``comer''}
-Cuando \texttt{board[idx]} vale 2, \texttt{MOVE\_SNAKE} se desvía a la etiqueta \texttt{ms\_eat}. Allí incrementa \texttt{score}, invoca \texttt{PRINT\_NUM} para actualizar el puntaje en pantalla y \texttt{SPAWN\_FOOD} para generar la siguiente comida. Se encola el índice \texttt{idx} como nueva cabeza, pero \textbf{no se avanza} \texttt{tail}: la cola no se libera y, por tanto, la serpiente crece un segmento.
+Cuando \texttt{board[idx]} vale 2, \texttt{MOVE\_SNAKE} se desvía a la etiqueta \texttt{ms\_eat}. La rama incrementa \texttt{score}, conserva \texttt{BX} y \texttt{DX} con \texttt{PUSH} antes de llamar a \texttt{INT 10h AH=02h} para posicionar el cursor del puntaje, invoca \texttt{PRINT\_NUM} y restaura esos registros con \texttt{POP} antes de \texttt{SPAWN\_FOOD}. Así evita que \texttt{BH=0}, \texttt{DH=0} y \texttt{DL=28} alteren el índice de la nueva cabeza o la fila y columna candidatas. Luego genera la siguiente comida, encola \texttt{idx} como nueva cabeza y actualiza esa celda como serpiente; \textbf{no se avanza} \texttt{tail}, por lo que la serpiente crece un segmento. % REVISAR: verificar este orden en el archivo ASM, que no está disponible en la copia consultada.
 
 \subsection{Flujo detallado de un choque}
 Considérese la cabeza en \texttt{headRow}=0 con \texttt{dir}=0 (arriba). \texttt{DEC DH} convierte la fila candidata en \texttt{255}. \texttt{CHECK\_COLLISION} compara con \texttt{BOARD\_H}=10 y, al ser \texttt{JAE} una comparación sin signo, $255\geq 10$ se cumple; la rutina devuelve \texttt{AL=1}. \texttt{MOVE\_SNAKE} propaga ese valor y el bucle principal invoca \texttt{GAME\_OVER}. Con \texttt{JGE}, \texttt{255} se interpretaría como $-1$ y no se detectaría la pared; por eso se usa \texttt{JAE}.
@@ -587,11 +593,14 @@ MOVE_SNAKE:
     idx = nueva fila * 40 + nueva columna
     si board[idx] es comida:
         score = score + 1
+        guardar BX y DX con PUSH
+        posicionar el cursor del puntaje con INT 10h AH=02h
         PRINT_NUM
+        restaurar DX y BX con POP
+        SPAWN_FOOD
         encolar idx
         board[idx] = serpiente
         dibujar nueva cabeza
-        SPAWN_FOOD
     si no:
         encolar idx
         board[idx] = serpiente
@@ -636,11 +645,11 @@ PRINT_NUM:
 \end{lstlisting}
 
 \subsection{DELAY}
+% REVISAR: reemplazar esta descripción por la implementación exacta cuando esté disponible snakeGame.asm.
 \begin{lstlisting}[language={},caption={Pseudocódigo de DELAY.},label={lst:p-delay}]
 DELAY:
-    inicio = ticks del reloj
-    mientras (ticks actuales - inicio) < delayTicks:
-        consultar ticks del reloj
+    esperar el intervalo explicito del fotograma
+    usando el servicio BIOS implementado
 \end{lstlisting}
 
 \subsection{GAME\_OVER}
@@ -673,14 +682,12 @@ programa Snake:
 \section{Análisis de rendimiento}
 
 \subsection{¿Por qué el juego es ``lento''?}
-El tiempo de un fotograma lo domina el procedimiento \texttt{DELAY}. Con \texttt{delayTicks}=2 y un reloj del BIOS de unos 18,2~ticks por segundo, el retardo es
-\[
-2\times\frac{1}{18{,}2}\ \text{s}\approx 0{,}1099\ \text{s},
-\]
-es decir, unos 110~ms, lo que equivale a unos 9~fotogramas por segundo. Esa espera representa aproximadamente el 95\% del tiempo de cada fotograma.
+El programa no es lento por naturaleza: por fotograma ejecuta pocas instrucciones y alrededor de cuatro llamadas a \texttt{INT 10h}. El ritmo lo determina la espera explícita de \texttt{DELAY}. % REVISAR: falta snakeGame.asm para determinar qué variante de espera está implementada.
 
-\subsection{Presupuesto de ciclos por fotograma}
-La Tabla~\ref{tab:rendimiento} resume los factores. Las instrucciones aritméticas más costosas en el 8086 son \texttt{MUL} de 8 bits (unos 70--77 ciclos), \texttt{MUL} de 16 bits (118--133), \texttt{DIV} de 8 bits (80--90) y \texttt{DIV} de 16 bits (144--162). En un fotograma normal se ejecutan aproximadamente un \texttt{MUL} y dos \texttt{DIV}, lo que suma unos 260 ciclos; como referencia, a 4,77~MHz esa cifra equivale a menos de 0,1~ms, despreciable frente a los 110~ms del retardo.
+Si la versión vigente consulta ticks con \texttt{INT 1Ah} y usa \texttt{delayTicks=2}, cada tick dura aproximadamente 55~ms y la espera efectiva queda entre uno y dos ticks, es decir, entre unos 55 y 110~ms; no es una duración fija de 110~ms. Si usa \texttt{INT 15h AH=86h} con \texttt{CX=0001h}, \texttt{DX=86A0h}, 100~ms es solo el intervalo nominal solicitado, no un tiempo medido; el comportamiento de ese servicio en EMU8086 no está verificado. La variante activa debe confirmarse en el ASM.
+
+\subsection{Costo por fotograma}
+La Tabla~\ref{tab:rendimiento} resume los factores cualitativos. No se asignan ciclos ni duraciones de ejecución que no hayan sido medidos.
 
 \begin{table}[ht]
 \centering
@@ -690,18 +697,18 @@ La Tabla~\ref{tab:rendimiento} resume los factores. Las instrucciones aritmétic
 \toprule
 Factor & Costo por frame & ¿Cuello de botella? \\
 \midrule
-\texttt{DELAY} & $\approx 110$~ms (2 ticks). & Sí (deliberado). \\
-\texttt{MUL}/\texttt{DIV} & $\approx 260$ ciclos (1 \texttt{MUL} + 2 \texttt{DIV}). & No. \\
-\texttt{INT 10h} & 4 llamadas por fotograma en \texttt{DRAW\_CELL}. & No. \\
-\texttt{INT 16h} & 0 a 2 llamadas por fotograma. & No. \\
-\texttt{INT 1Ah} & Repetida dentro de \texttt{DELAY} mientras espera. & Parte del retardo. \\
-\texttt{INT 21h} & Solo en \texttt{PRINT\_NUM}, al comer. & No. \\
+\texttt{DELAY} & Espera explícita; duración y servicio dependen de la variante vigente. & Sí, determina el ritmo. \\
+Instrucciones del juego & Pocas por fotograma; sin estimación de ciclos. & No se ha medido. \\
+\texttt{INT 10h} & Alrededor de cuatro llamadas por fotograma. & No se ha medido como cuello de botella. \\
+\texttt{INT 16h} & Consulta el teclado en \texttt{READ\_KEY}. & No se ha medido. \\
+\texttt{INT 1Ah}/\texttt{INT 15h} & Servicio de temporización según la variante activa de \texttt{DELAY}. & Confirmar en el ASM. \\
+\texttt{INT 21h} & Interviene al imprimir el puntaje cuando se come. & No se ha medido. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Cuellos de botella identificados}
-El único cuello de botella es el retardo programado. Las cuatro llamadas a \texttt{INT 10h} (dos por cada invocación de \texttt{DRAW\_CELL}, para la nueva cabeza y para la cola borrada) y las lecturas de \texttt{INT 16h} cuestan poco frente a \texttt{DELAY}. El costo de \texttt{INT 21h} en \texttt{PRINT\_NUM} solo aparece al comer y no afecta la fluidez. En conclusión, la lentitud es una decisión de diseño (\texttt{delayTicks} calibrado a $\approx 9$~fps), no una limitación del 8086 ni del ensamblador.
+\subsection{Cuellos de botella y latencia de entrada}
+La espera explícita es el control deliberado del ritmo; no se ha medido el costo de las demás operaciones. La velocidad percibida varió entre ejecuciones del mismo código en EMU8086, dependiendo de la velocidad de emulación. Además, \texttt{READ\_KEY} lee una sola tecla por ciclo y no vacía el búfer: mantener una tecla presionada puede acumular pulsaciones en el búfer del BIOS, por lo que la serpiente responde con retraso. Es una limitación conocida y no corregida. % REVISAR: confirmar el servicio de espera vigente en snakeGame.asm.
 
 \section{Limitaciones y consideraciones}
 
@@ -722,7 +729,7 @@ Tablero lleno sin victoria & No existe condición de victoria cuando la serpient
 Celda de la cola & La celda de la cola cuenta como colisión, aunque en ese instante quedaría libre. \\
 Sin reinicio & Tras \texttt{GAME\_OVER} no se ofrece jugar de nuevo. \\
 Sin récord & No se conserva la mejor puntuación. \\
-Velocidad fija & \texttt{delayTicks} no cambia durante la partida. \\
+Ritmo del juego & Lo determina la espera de \texttt{DELAY}; confirmar en el ASM si su duración puede cambiar durante la partida. \\
 Sin pausa & No hay tecla de pausa. \\
 Sin sonido & No se emite ningún sonido. \\
 Semilla repetible & La semilla puede repetirse entre ejecuciones y producir la misma secuencia de comida (condición por confirmar). \\
@@ -745,7 +752,8 @@ Limitación & Descripción \\
 \texttt{DRAW\_CELL} & Asume un índice de celda $\leq 399$; no valida el rango. \\
 \texttt{CHECK\_COLLISION} & Es frágil ante un cambio de \texttt{JAE} a \texttt{JGE}, que dejaría de detectar las paredes. \\
 \texttt{queue} no se reinicia & Los valores antiguos permanecen; solo \texttt{head} y \texttt{tail} definen el contenido válido. \\
-\texttt{READ\_KEY} & Ignora las teclas de función y otras teclas no previstas. \\
+\texttt{READ\_KEY} & Lee una sola tecla por ciclo y no vacía el búfer; mantener una tecla presionada puede acumular pulsaciones y retrasar la respuesta. También ignora teclas no previstas. \\
+EMU8086 y temporización & La velocidad percibida varió entre ejecuciones del mismo código según la velocidad de emulación; no se registran mediciones. El comportamiento de \texttt{INT 15h AH=86h} no está verificado y 100~ms es solo un valor nominal, no medido. \\
 \texttt{PRINT\_NUM} & Deja tres espacios tras el número impreso. \\
 \end{longtable}
 
@@ -760,7 +768,9 @@ Aspecto & Descripción \\
 \midrule
 Plataforma & Diseñado para EMU8086 y DOS; no se garantiza en otros entornos. \\
 Formato COM & Tamaño máximo de 64~KB. \\
-\texttt{INT 1Ah} & Su comportamiento puede diferir en hardware real. \\
+% REVISAR: confirmar si snakeGame.asm usa INT 15h AH=86h.
+EMU8086 y temporización & La velocidad percibida varió entre ejecuciones del mismo código según la velocidad de emulación. El comportamiento de \texttt{INT 15h AH=86h} en EMU8086 no fue verificado; 100~ms solo debe describirse como valor nominal, no medido. \\
+Latencia de teclado & \texttt{READ\_KEY} procesa una tecla por ciclo y no vacía el búfer; mantener una tecla presionada acumula pulsaciones y retrasa la respuesta. No está corregido. \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -790,6 +800,7 @@ Entre las mejoras posibles, que \emph{no} forman parte del programa actual, se c
     \item[\texttt{[ ]}] El choque con la pared funciona en los cuatro lados.
     \item[\texttt{[ ]}] El choque con el propio cuerpo termina la partida.
     \item[\texttt{[ ]}] Al comer, la serpiente crece un segmento.
+    \item[\texttt{[ ]}] Al comer una semilla ubicada en las filas 7 a 9, la semilla desaparece, no aparece una segunda y la serpiente continúa desde esa celda.
     \item[\texttt{[ ]}] El puntaje se muestra correctamente con 0, 1, 2 y 3 cifras.
     \item[\texttt{[ ]}] \texttt{ESC} sale del programa y restaura el cursor.
     \item[\texttt{[ ]}] El borde del tablero se mantiene intacto durante el juego.
@@ -799,12 +810,13 @@ Entre las mejoras posibles, que \emph{no} forman parte del programa actual, se c
 
 \subsection{Procedimiento de prueba recomendado}
 \begin{enumerate}[leftmargin=*]
-  \item Abrir \texttt{snake.asm} en EMU8086 y ensamblarlo sin errores.
+    \item Abrir \texttt{snakeGame.asm} en EMU8086 y ensamblarlo sin errores.
   \item Ejecutar el programa en el emulador y comprobar que se dibuja el borde, la serpiente inicial y la comida.
   \item Jugar durante unos 30 segundos probando flechas y WASD.
   \item Verificar el rechazo del giro de $180^\circ$.
   \item Provocar choques con cada una de las cuatro paredes y con el cuerpo.
   \item Comer varias veces y observar el crecimiento y el puntaje con una, dos y tres cifras.
+    \item Colocar una semilla en una fila entre 7 y 9 y comerla; comprobar que desaparece, no se duplica y que la cabeza continúa desde la celda comida.
   \item Verificar \texttt{GAME\_OVER} y la espera de tecla.
   \item Repetir y salir con \texttt{ESC}; confirmar que el cursor y el modo de video se restauran.
   \item Marcar cada ítem de la lista de verificación.
@@ -812,12 +824,13 @@ Entre las mejoras posibles, que \emph{no} forman parte del programa actual, se c
 
 \section{Anexos}
 
-\subsection{Código fuente completo (snake.asm)}
-\IfFileExists{snake.asm}{%
+\subsection{Código fuente completo (snakeGame.asm)}
+% REVISAR: el archivo snakeGame.asm no está disponible en esta copia; no es posible incorporar ni cotejar aquí su contenido literal.
+\IfFileExists{snakeGame.asm}{%
     El Listado~\ref{lst:snake} incluye el código fuente completo.
-    \lstinputlisting[numbers=left,caption={snake.asm},label={lst:snake}]{snake.asm}%
+    \lstinputlisting[numbers=left,caption={snakeGame.asm},label={lst:snake}]{snakeGame.asm}%
 }{%
-    El archivo \texttt{snake.asm} no está disponible en esta carpeta; por ello,
+    El archivo \texttt{snakeGame.asm} no está disponible en esta carpeta; por ello,
     no se puede incluir el código fuente en este anexo.%
 }
 
@@ -848,13 +861,14 @@ Nombre & Tipo & Tamaño & Uso \\
 \texttt{headCol} & \texttt{DB} & 1 byte & Columna de la cabeza. \\
 \texttt{score} & \texttt{DW} & 1 palabra & Puntaje. \\
 \texttt{seed} & \texttt{DW} & 1 palabra & Semilla del generador. \\
-\texttt{delayTicks} & \texttt{DB} & 1 byte & Ticks de espera (2). \\
+% REVISAR: cotejar declaración, valor y uso de delayTicks con snakeGame.asm; si existe pero no se usa, indicarlo como variable sin uso.
+\texttt{delayTicks} & Por verificar & Por verificar & Confirmar si está declarada y se consulta en \texttt{DELAY}; si la versión usa \texttt{INT 15h AH=86h} y la variable existe pero no se consulta, documentarla como sin uso. \\
 \texttt{msgScore} & \texttt{DB} & cadena & ``Puntaje: ''. \\
 \texttt{msgGameOver} & \texttt{DB} & cadena & ``GAME OVER!''. \\
 \end{longtable}
 
 \subsection{Tabla de servicios BIOS/DOS usados}
-La Tabla~\ref{tab:servicios} lista los servicios del sistema. Las funciones marcadas con asterisco están pendientes de confirmar contra el código fuente.
+La Tabla~\ref{tab:servicios} lista los servicios del sistema. % REVISAR: sin snakeGame.asm no se puede determinar cuál alternativa de DELAY está activa.
 
 \begin{longtable}{@{}p{1.4cm}p{1.8cm}p{5.2cm}p{4.6cm}@{}}
 \caption{Servicios BIOS y DOS empleados.}\label{tab:servicios}\\
@@ -870,11 +884,12 @@ INT & AH & Función & Dónde se usa \\
 \endfoot
 \texttt{10h} & \texttt{01h} & Fijar forma del cursor (\texttt{CX=0607h} restaura; \texttt{CX=2000h} oculta). & Salida del programa; inicio (por confirmar). \\
 \texttt{10h} & \texttt{00h}* & Fijar modo de video. & Inicio y salida. \\
-\texttt{10h} & \texttt{02h}* & Posicionar el cursor. & \texttt{DRAW\_CELL}, \texttt{DRAW\_BORDER}. \\
+\texttt{10h} & \texttt{02h}* & Posicionar el cursor. & \texttt{DRAW\_CELL}, \texttt{DRAW\_BORDER}, \texttt{MOVE\_SNAKE} al actualizar el puntaje (por verificar). \\
 \texttt{10h} & \texttt{09h}* & Escribir carácter con atributo. & \texttt{DRAW\_CELL}. \\
 \texttt{16h} & \texttt{01h} & Consultar teclado sin bloquear. & \texttt{READ\_KEY}. \\
 \texttt{16h} & \texttt{00h} & Leer y consumir tecla. & \texttt{READ\_KEY}, \texttt{GAME\_OVER}. \\
-\texttt{1Ah} & \texttt{00h} & Leer contador de ticks. & \texttt{DELAY}. \\
+\texttt{1Ah} & \texttt{00h}* & Leer contador de ticks, si esta es la variante de espera vigente. & \texttt{DELAY}; confirmar en el ASM. \\
+\texttt{15h} & \texttt{86h}* & Espera BIOS con intervalo en microsegundos en \texttt{CX:DX}; \texttt{0001:86A0h} solicita nominalmente 100~ms. & \texttt{DELAY}, solo si esta es la variante vigente; no es un tiempo medido. \\
 \texttt{21h} & * & Salida de caracteres o cadenas. & \texttt{PRINT\_NUM}, mensajes. \\
 \end{longtable}
 
@@ -888,12 +903,13 @@ INT & AH & Función & Dónde se usa \\
 \section*{Notas para el autor}
 Los siguientes puntos requieren confirmación humana antes de la entrega:
 \begin{enumerate}[leftmargin=*]
-  \item El archivo \texttt{snake.asm} no estaba disponible al redactar este documento. El Anexo~A usa \texttt{\textbackslash lstinputlisting\{snake.asm\}}: coloque el archivo en la misma carpeta o pegue su contenido literal en un \texttt{lstlisting}.
+    \item El archivo \texttt{snakeGame.asm} no está disponible en el workspace ni en el árbol Git consultado. El Anexo~A lo incluye condicionalmente, pero no se pudo incorporar su contenido literal; agréguelo junto a \texttt{main.tex} para completar y cotejar el anexo.
   \item La versión exacta de EMU8086 no se indicó en la fuente (Tabla~\ref{tab:herramientas}).
   \item La lista exacta de registros modificados y preservados con \texttt{PUSH}/\texttt{POP} de cada procedimiento no estaba definida (Tabla~\ref{tab:fichas}).
   \item Los números de función \texttt{AH} marcados con asterisco en la Tabla~\ref{tab:servicios}, la forma exacta de terminar el programa y las funciones de \texttt{INT 21h} deben verificarse en el código.
   \item El lugar del código donde se aplica \texttt{CX=2000h} y la razón del doble \texttt{PUSH AX} en \texttt{DRAW\_CELL} deben confirmarse antes de la exposición.
-  \item Las marcas de tiempo de la micro-traza son ilustrativas; los valores de las variables sí provienen de la especificación.
+    % REVISAR: verificar directamente en snakeGame.asm la preservación de BX y DX en ms_eat, la secuencia de restauración y la variante de temporización usada por DELAY.
+    \item La velocidad percibida se reporta como variable entre ejecuciones según la velocidad de emulación; no se registran mediciones de tiempo. El comportamiento de \texttt{INT 15h AH=86h} en EMU8086 no fue verificado.
   \item Debe confirmarse cómo se inicializa \texttt{seed} (afecta la limitación ``semilla repetible'').
   \item Las referencias bibliográficas requieren edición, año y versión definitivos; las prácticas del curso se nombraron según el enunciado proporcionado.
 \end{enumerate}
