@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.18)  10 NOV 2026 10:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.18)  10 NOV 2026 20:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -723,12 +723,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count389
-) (./main.aux
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 12.
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 131.
@@ -751,6 +746,8 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 131.
 LaTeX Font Info:    ... okay on input line 131.
 LaTeX Info: Redefining \. on input line 131.
 LaTeX Info: Redefining \% on input line 131.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 131.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -812,38 +809,30 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 131.
- (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-<img/logo_episunsa.png, id=240, 195.73125pt x 58.2175pt>
+<img/logo_episunsa.png, id=7, 195.73125pt x 58.2175pt>
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
 Package pdftex.def Info: img/logo_episunsa.png  used on input line 187.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-<img/logo_abet.png, id=241, 58.2175pt x 65.24374pt>
+<img/logo_abet.png, id=8, 58.2175pt x 65.24374pt>
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
 Package pdftex.def Info: img/logo_abet.png  used on input line 187.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
- <./img/logo_episunsa.png> <./img/logo_abet.png>] (./main.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-File: img/logo_episunsa.png Graphic file (type png)
-<use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 53.
-(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-File: img/logo_abet.png Graphic file (type png)
-<use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 53.
-(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [2])
+ <./img/logo_episunsa.png> <./img/logo_abet.png>]
+No file main.toc.
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- [3]
+[2]
+
+LaTeX Warning: Reference `tab:herramientas' on page 3 undefined on input line 209.
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
 Package pdftex.def Info: img/logo_episunsa.png  used on input line 238.
@@ -852,268 +841,2190 @@ File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
 Package pdftex.def Info: img/logo_abet.png  used on input line 238.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [4
+[3
 
 ]
+
+LaTeX Warning: Reference `tab:banderas' on page 4 undefined on input line 239.
+
+
+LaTeX Warning: Reference `sec:signo' on page 4 undefined on input line 255.
+
+
+LaTeX Warning: Reference `tab:servicios' on page 4 undefined on input line 264.
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 273.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 271.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 273.
+Package pdftex.def Info: img/logo_abet.png  used on input line 271.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [5]
+[4]
+
+LaTeX Warning: Reference `tab:teclas' on page 5 undefined on input line 292.
+
+
+LaTeX Warning: Reference `tab:variables' on page 5 undefined on input line 319.
+
+
+LaTeX Warning: Reference `tab:fichas' on page 5 undefined on input line 350.
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 317.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 351.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 317.
+Package pdftex.def Info: img/logo_abet.png  used on input line 351.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 362--362
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 364--364
 []|\OT1/cmr/m/n/10 Variables y
  []
 
 
-Underfull \hbox (badness 2302) in paragraph at lines 362--363
+Underfull \hbox (badness 2302) in paragraph at lines 364--365
 []|\OT1/cmr/m/n/10 Limpia el ta-ble-ro, co-lo-ca los
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
+LaTeX Warning: Reference `sec:bucle' on page 6 undefined on input line 366.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
 []|\OT1/cmtt/m/n/10 dir\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 headRow\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
+Underfull \hbox (badness 10000) in paragraph at lines 367--367
 \OT1/cmtt/m/n/10 headCol\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 head\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 365--365
+Underfull \hbox (badness 4967) in paragraph at lines 367--367
 \OT1/cmr/m/n/10 li-si^^Son; ac-tua-li-za
  []
 
 
-Overfull \hbox (6.14743pt too wide) in paragraph at lines 366--366
+Overfull \hbox (6.14743pt too wide) in paragraph at lines 368--368
 []|\OT1/cmtt/m/n/10 CHECK[]COLLISION| 
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 367--367
+Underfull \hbox (badness 1052) in paragraph at lines 369--369
 []|\OT1/cmr/m/n/10 Comida en una
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 \OT1/cmr/m/n/10 cel-da li-bre (o
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--367
+Underfull \hbox (badness 10000) in paragraph at lines 369--369
 \OT1/cmr/m/n/10 nin-gu-na, tras
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--368
+Underfull \hbox (badness 10000) in paragraph at lines 370--370
 []|[]\OT1/cmr/m/n/10 Indi-ce de cel-da,
  []
 
-File: img/logo_episunsa.png Graphic file (type png)
-<use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 372.
-(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-File: img/logo_abet.png Graphic file (type png)
-<use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 372.
-(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
-[7]
-File: img/logo_episunsa.png Graphic file (type png)
-<use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 396.
-(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-File: img/logo_abet.png Graphic file (type png)
-<use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 396.
-(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [8]
-Underfull \hbox (badness 5345) in paragraph at lines 418--418
-[]|\OT1/cmr/m/n/10 Inicializaci^^Son de va-lo-res y
+
+Underfull \hbox (badness 10000) in paragraph at lines 373--373
+[]|\OT1/cmr/m/n/10 Ninguna ex-ter-na;
  []
 
 
-Underfull \hbox (badness 8151) in paragraph at lines 419--420
+Underfull \hbox (badness 10000) in paragraph at lines 373--373
+\OT1/cmr/m/n/10 par^^Same-tros in-ter-
+ []
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 375.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 375.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[6]
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 397.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 397.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+ [7]
+
+LaTeX Warning: Reference `tab:rastreo' on page 8 undefined on input line 409.
+
+
+LaTeX Warning: Reference `tab:banderas' on page 8 undefined on input line 409.
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 425--426
 []|\OT1/cmtt/m/n/10 INIT[]GAME\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 READ[]KEY\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 \OT1/cmtt/m/n/10 CHECK[]COLLISION\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 3989) in paragraph at lines 420--420
+Underfull \hbox (badness 3989) in paragraph at lines 426--426
 []|\OT1/cmr/m/n/10 M^^Sodu-lo 4 de la di-rec-ci^^Son
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
 []|\OT1/cmtt/m/n/10 INIT[]GAME\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
 []|\OT1/cmtt/m/n/10 CHECK[]COLLISION
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
 \OT1/cmr/m/n/10 (\OT1/cmtt/m/n/10 [BX]\OT1/cmr/m/n/10 ); \OT1/cmtt/m/n/10 MOVE[]SNAKE\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--426
+Underfull \hbox (badness 10000) in paragraph at lines 432--432
 []|\OT1/cmtt/m/n/10 org 100h\OT1/cmr/m/n/10 ; \OT1/cmtt/m/n/10 XCHG
  []
 
 
-Underfull \hbox (badness 7907) in paragraph at lines 426--427
+Underfull \hbox (badness 7907) in paragraph at lines 432--433
 []|\OT1/cmr/m/n/10 Inicio del pro-gra-ma;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
 []|\OT1/cmtt/m/n/10 DRAW[]BORDER\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--434
+Underfull \hbox (badness 10000) in paragraph at lines 440--440
 []|\OT1/cmr/m/n/10 D^^S^^Pgi-tos de-ci-ma-les; res-to
  []
 
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 438.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 444.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 438.
+Package pdftex.def Info: img/logo_abet.png  used on input line 444.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[8]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 451.
+
+
+LaTeX Warning: Reference `lst:flujotecla' on page 9 undefined on input line 467.
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 469.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 469.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
 [9]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 445.
-File: img/logo_episunsa.png Graphic file (type png)
-<use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 477.
-(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-File: img/logo_abet.png Graphic file (type png)
-<use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 477.
-(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [10]
+
+LaTeX Warning: Reference `tab:teclas' on page 10 undefined on input line 501.
+
+
+LaTeX Warning: Reference `lst:flujotecla' on page 10 undefined on input line 501.
+
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 505.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 511.
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 519.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 517.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 519.
+Package pdftex.def Info: img/logo_abet.png  used on input line 517.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [11]
+[10]
+
+LaTeX Warning: Reference `lst:bucle' on page 11 undefined on input line 530.
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 565.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 555.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 565.
+Package pdftex.def Info: img/logo_abet.png  used on input line 555.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[11]
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 609.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 609.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [12]
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 618.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 660.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 618.
+Package pdftex.def Info: img/logo_abet.png  used on input line 660.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [13]
+
+LaTeX Warning: Reference `tab:rendimiento' on page 14 undefined on input line 690.
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 702--703
+\OT1/cmr/m/n/10 do co-mo cue-llo
+ []
+
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 668.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 736.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 668.
+Package pdftex.def Info: img/logo_abet.png  used on input line 736.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
- [14]
+[14]
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 729.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 758.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 729.
+Package pdftex.def Info: img/logo_abet.png  used on input line 758.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [15]
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 774.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 798.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 774.
+Package pdftex.def Info: img/logo_abet.png  used on input line 798.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [16]
+
+LaTeX Warning: Reference `lst:snake' on page 17 undefined on input line 835.
+
+(./snakeGame.asm
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 824.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 10.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 824.
+Package pdftex.def Info: img/logo_abet.png  used on input line 10.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
  [17]
-Underfull \hbox (badness 2005) in paragraph at lines 871--872
+
+./snakeGame.asm:18: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18     ; Modo texto 80x25 (PRﾃ，TICA 
+                                       3: MOV inmediato)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:18: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18     ; Modo texto 80x25 (PRﾃ，TICA 
+                                       3: MOV inmediato)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:28: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28     sub al, al                  ; PRﾃ，TICA 
+                                                 5: SUB, AL=0
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:28: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28     sub al, al                  ; PRﾃ，TICA 
+                                                 5: SUB, AL=0
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:34: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34     ; ﾃ肱dices:
+                     5*40+19=219, 220, 221
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:34: LaTeX Error: Invalid UTF-8 byte "8D.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34     ; ﾃ肱dices:
+                     5*40+19=219, 220, 221
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:38: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38     mov head, 3                 ; prﾃｳximo 
+                                                ﾃｭndice libre
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:38: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38     mov head, 3                 ; prﾃｳximo 
+                                                ﾃｭndice libre
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:38: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 ...ead, 3                 ; prﾃｳximo ﾃｭndice 
+                                                  libre
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:38: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.38 ...ead, 3                 ; prﾃｳximo ﾃｭndice 
+                                                  libre
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:44: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44     ; Marcar en board (PRﾃ，TICA 
+                                      3: MOV directo con [BX/ﾃｭndice])
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:44: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44     ; Marcar en board (PRﾃ，TICA 
+                                      3: MOV directo con [BX/ﾃｭndice])
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:44: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 ...(PRﾃ，TICA 3: MOV directo con [BX/ﾃｭndice]
+                                                  )
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:44: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 ...(PRﾃ，TICA 3: MOV directo con [BX/ﾃｭndice]
+                                                  )
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:52: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52     xor seed, cx                ; PRﾃ，TICA 
+                                                 2: XOR para mezclar
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:52: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52     xor seed, cx                ; PRﾃ，TICA 
+                                                 2: XOR para mezclar
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 60.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 60.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[18{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+./snakeGame.asm:64: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64     ; Imprimir "P
+                      untaje: "
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./snakeGame.asm:64: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.64     ; Imprimir "Puntaje: "
+                               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 119.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 119.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[19]
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 178.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 178.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+ [20]
+
+./snakeGame.asm:221: LaTeX Error: Invalid UTF-8 byte sequence (ﾂ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221     ; ﾂｿHay 
+                  tecla? INT 16h AH=01h: ZF=1 -> no hay
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:221: LaTeX Error: Invalid UTF-8 byte "BF.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.221     ; ﾂｿHay 
+                  tecla? INT 16h AH=01h: ZF=1 -> no hay
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 237.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 237.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[21]
+
+./snakeGame.asm:257: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257     ; WASD (mayﾃｺsculas 
+                              y minﾃｺsculas)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:257: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257     ; WASD (mayﾃｺsculas 
+                              y minﾃｺsculas)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:257: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257     ; WASD (mayﾃｺsculas y minﾃｺsculas)
+                                            
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:257: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257     ; WASD (mayﾃｺsculas y minﾃｺsculas)
+                                            
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:287: LaTeX Error: Invalid UTF-8 byte sequence (ﾂ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.287     ; Rechazar giro 180ﾂｰ:
+                                 nueva == (dir+2) AND 3
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:287: LaTeX Error: Invalid UTF-8 byte "B0.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.287     ; Rechazar giro 180ﾂｰ:
+                                 nueva == (dir+2) AND 3
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:290: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.290     and al, 3                   ; PRﾃ，TICA 
+                                                  2: AND 3 acota a 0..3
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:290: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.290     and al, 3                   ; PRﾃ，TICA 
+                                                  2: AND 3 acota a 0..3
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 296.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 296.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[22]
+
+./snakeGame.asm:304: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.304 ...0 libre, 1 pared, 2 cuerpo; BX = ﾃｭndice 
+                                                  si no es pared
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:304: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.304 ...0 libre, 1 pared, 2 cuerpo; BX = ﾃｭndice 
+                                                  si no es pared
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:308: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.308     ; Paredes (comparaciﾃｳn 
+                                  sin signo: 0-1 da 255/65535)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:308: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.308     ; Paredes (comparaciﾃｳn 
+                                  sin signo: 0-1 da 255/65535)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:313: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.313     ; ﾃ肱dice 
+                    = fila*40 + col
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:313: LaTeX Error: Invalid UTF-8 byte "8D.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.313     ; ﾃ肱dice 
+                    = fila*40 + col
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:317: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317     mul bl                      ; PRﾃ，TICA 
+                                                  5: MUL 8 bits -> AX
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:317: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.317     mul bl                      ; PRﾃ，TICA 
+                                                  5: MUL 8 bits -> AX
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:320: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.320     add ax, bx                  ; PRﾃ，TICA 
+                                                  5: ADD
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:320: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.320     add ax, bx                  ; PRﾃ，TICA 
+                                                  5: ADD
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:321: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321 ...ov bx, ax                  ; BX = ﾃｭndice
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:321: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.321 ...ov bx, ax                  ; BX = ﾃｭndice
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:345: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345     ; Nueva posiciﾃｳn 
+                            segﾃｺn dir
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:345: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345     ; Nueva posiciﾃｳn 
+                            segﾃｺn dir
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:345: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345     ; Nueva posiciﾃｳn segﾃｺn 
+                                   dir
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:345: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345     ; Nueva posiciﾃｳn segﾃｺn 
+                                   dir
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 355.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 355.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[23]
+
+./snakeGame.asm:369: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.369     mov al, 1                   ; colisiﾃｳn 
+                                                  -> game over
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:369: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.369     mov al, 1                   ; colisiﾃｳn 
+                                                  -> game over
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:372: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372     ; BX = ﾃｭndice 
+                         nueva cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:372: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.372     ; BX = ﾃｭndice 
+                         nueva cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:377: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.377     shl si, 1                   ; PRﾃ，TICA 
+                                                  2: SHL para ﾃｭndice de pal...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:377: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.377     shl si, 1                   ; PRﾃ，TICA 
+                                                  2: SHL para ﾃｭndice de pal...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:377: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.377 ...         ; PRﾃ，TICA 2: SHL para ﾃｭndice 
+                                                  de palabra
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:377: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.377 ...         ; PRﾃ，TICA 2: SHL para ﾃｭndice 
+                                                  de palabra
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:378: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.378 ...v di, queue[si]           ; DI = ﾃｭndice 
+                                                  de la cola
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:378: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.378 ...v di, queue[si]           ; DI = ﾃｭndice 
+                                                  de la cola
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:380: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.380     ; Dibujar espacio (PRﾃ，TICA 
+                                       3: XCHG natural)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:380: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.380     ; Dibujar espacio (PRﾃ，TICA 
+                                       3: XCHG natural)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:396: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 ...bx                     ; guardar ﾃｭndice 
+                                                  de la nueva cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:396: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.396 ...bx                     ; guardar ﾃｭndice 
+                                                  de la nueva cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 414.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 414.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[24]
+
+./snakeGame.asm:422: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422     ; Actualizar posiciﾃｳn 
+                                 de la cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:422: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.422     ; Actualizar posiciﾃｳn 
+                                 de la cabeza
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:450: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.450     mov cx, 1000                ; mﾃ｡ximo 
+                                                de intentos
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:450: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.450     mov cx, 1000                ; mﾃ｡ximo 
+                                                de intentos
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:455: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.455     mul bx                      ; PRﾃ，TICA 
+                                                  5: MUL 16 bits -> DX:AX
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:455: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.455     mul bx                      ; PRﾃ，TICA 
+                                                  5: MUL 16 bits -> DX:AX
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:456: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.456     add ax, 13849               ; PRﾃ，TICA 
+                                                  2: ADD/ADC = sumador total
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:456: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.456     add ax, 13849               ; PRﾃ，TICA 
+                                                  2: ADD/ADC = sumador total
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:462: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.462     div bx                      ; PRﾃ，TICA 
+                                                  5: DIV 16 bits -> DX=resto
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:462: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.462     div bx                      ; PRﾃ，TICA 
+                                                  5: DIV 16 bits -> DX=resto
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 473.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 473.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[25]
+
+./snakeGame.asm:485: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.485 ; DRAW_CELL: Dibuja un carﾃ｡cter 
+                                       en la celda BX del tablero
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:485: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.485 ; DRAW_CELL: Dibuja un carﾃ｡cter 
+                                       en la celda BX del tablero
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:486: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 ; Entrada: BX = ﾃｭndice 
+                              (0..399), AL = carﾃ｡cter, AH = color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:486: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 ; Entrada: BX = ﾃｭndice 
+                              (0..399), AL = carﾃ｡cter, AH = color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:486: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 ...a: BX = ﾃｭndice (0..399), AL = carﾃ｡cter,
+                                                   AH = color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:486: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.486 ...a: BX = ﾃｭndice (0..399), AL = carﾃ｡cter,
+                                                   AH = color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:495: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.495 ...                     ; guardar carﾃ｡cter/
+                                                  color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:495: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.495 ...                     ; guardar carﾃ｡cter/
+                                                  color
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:496: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496     ; fila = ﾃｭndice 
+                           / 40, col = ﾃｭndice % 40 (DIV 8 bits)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:496: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496     ; fila = ﾃｭndice 
+                           / 40, col = ﾃｭndice % 40 (DIV 8 bits)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:496: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496     ; fila = ﾃｭndice / 40, col = ﾃｭndice 
+                                               % 40 (DIV 8 bits)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:496: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.496     ; fila = ﾃｭndice / 40, col = ﾃｭndice 
+                                               % 40 (DIV 8 bits)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:499: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.499     div cl                      ; PRﾃ，TICA 
+                                                  5: DIV 8 bits -> AL=fila, ...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:499: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.499     div cl                      ; PRﾃ，TICA 
+                                                  5: DIV 8 bits -> AL=fila, ...
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:508: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.508     ; Escribir carﾃ｡cter 
+                               (AH=09h, BH=0, CX=1)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:508: LaTeX Error: Invalid UTF-8 byte "A1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.508     ; Escribir carﾃ｡cter 
+                               (AH=09h, BH=0, CX=1)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:523: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.523 ...M: Imprime AX en decimal en la posiciﾃｳn 
+                                                  actual del cursor
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:523: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.523 ...M: Imprime AX en decimal en la posiciﾃｳn 
+                                                  actual del cursor
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:524: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.524 ; Entrada: AX = nﾃｺmero 
+                              (0..65535), cursor ya posicionado
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:524: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.524 ; Entrada: AX = nﾃｺmero 
+                              (0..65535), cursor ya posicionado
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:525: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 ; Salida: imprime dﾃｭgitos 
+                                 + 3 espacios
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:525: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.525 ; Salida: imprime dﾃｭgitos 
+                                 + 3 espacios
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 532.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 532.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[26]
+
+./snakeGame.asm:534: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.534 ...x                  ; contador de dﾃｭgitos
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:534: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.534 ...x                  ; contador de dﾃｭgitos
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:537: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.537 ...                ; caso especial: nﾃｺmero 
+                                                  0
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:537: LaTeX Error: Invalid UTF-8 byte "BA.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.537 ...                ; caso especial: nﾃｺmero 
+                                                  0
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:542: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.542     div bx                      ; PRﾃ，TICA 
+                                                  5: DIV 16 bits -> DX=resto
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:542: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.542     div bx                      ; PRﾃ，TICA 
+                                                  5: DIV 16 bits -> DX=resto
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:543: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.543 ... dx                     ; apilar dﾃｭgito 
+                                                  (PRﾃ，TICA 5: PUSH)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:543: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.543 ... dx                     ; apilar dﾃｭgito 
+                                                  (PRﾃ，TICA 5: PUSH)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:543: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.543 ...             ; apilar dﾃｭgito (PRﾃ，TICA 
+                                                  5: PUSH)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:543: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.543 ...             ; apilar dﾃｭgito (PRﾃ，TICA 
+                                                  5: PUSH)
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:548: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548     pop dx                      ; PRﾃ，TICA 
+                                                  5: POP
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:548: LaTeX Error: Invalid UTF-8 byte "81.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.548     pop dx                      ; PRﾃ，TICA 
+                                                  5: POP
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:551: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.551 ...1h                     ; imprimir dﾃｭgito
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:551: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.551 ...1h                     ; imprimir dﾃｭgito
+                                                  
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:581: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.581 ; GAME_OVER: Muestra "G
+                             AME OVER!" y puntaje, espera tecla
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./snakeGame.asm:581: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.581 ; GAME_OVER: Muestra "GAME OVER!" 
+                                        y puntaje, espera tecla
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 591.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 591.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[27]
+
+./snakeGame.asm:597: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597     ; Imprimir "G
+                       AME OVER! Puntaje: "
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./snakeGame.asm:597: LaTeX Error: Command \textquotedbl unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.597     ; Imprimir "GAME OVER! Puntaje: "
+                                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./snakeGame.asm:648: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.648 queue       DW 400 dup(0)       ; ﾃｭndices 
+                                                 de las celdas de la serpiente
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:648: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.648 queue       DW 400 dup(0)       ; ﾃｭndices 
+                                                 de las celdas de la serpiente
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:649: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\expandafter).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.649 head        DW 0                ; prﾃｳximo 
+                                                 ﾃｭndice libre en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:649: LaTeX Error: Invalid UTF-8 byte "B3.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.649 head        DW 0                ; prﾃｳximo 
+                                                 ﾃｭndice libre en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:649: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.649 ...  DW 0                ; prﾃｳximo ﾃｭndice 
+                                                  libre en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:649: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.649 ...  DW 0                ; prﾃｳximo ﾃｭndice 
+                                                  libre en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 650.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 650.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[28]
+
+./snakeGame.asm:650: LaTeX Error: Invalid UTF-8 byte sequence (ﾃ\lst@FillFixed@).
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.650 tail        DW 0                ; ﾃｭndice 
+                                                de la cola en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./snakeGame.asm:650: LaTeX Error: Invalid UTF-8 byte "AD.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.650 tail        DW 0                ; ﾃｭndice 
+                                                de la cola en queue
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+)
+
+LaTeX Warning: Reference `tab:variablesB' on page 29 undefined on input line 838.
+
+
+LaTeX Warning: Reference `tab:variables' on page 29 undefined on input line 838.
+
+
+LaTeX Warning: Reference `tab:servicios' on page 29 undefined on input line 871.
+
+
+Underfull \hbox (badness 2005) in paragraph at lines 885--886
 []|\OT1/cmr/m/n/10 Salida del pro-gra-ma; ini-cio
  []
 
-File: img/logo_episunsa.png Graphic file (type png)
-<use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 884.
-(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
-File: img/logo_abet.png Graphic file (type png)
-<use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 884.
-(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
-[18]
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 891.
- (/usr/share/texlive/texmf-dist/tex/latex/R/omscmtt.fd
-File: omscmtt.fd 
-)
-LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 891.
 
-Overfull \hbox (57.08452pt too wide) in paragraph at lines 891--892
-[]\OT1/cmr/m/n/10 El ar-chi-vo \OT1/cmtt/m/n/10 snake.asm \OT1/cmr/m/n/10 no es-ta-ba dis-po-ni-ble al re-dac-tar es-te do-cu-men-to. El Ane-xo A usa \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 lstinputlisting\OMS/cmsy/m/n/10 f\OT1/cmtt/m/n/10 snake.asm\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 :
+Underfull \hbox (badness 10000) in paragraph at lines 887--888
+[]|\OT1/cmtt/m/n/10 DRAW[]CELL\OT1/cmr/m/n/10 , \OT1/cmtt/m/n/10 DRAW[]BORDER\OT1/cmr/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 887--888
+\OT1/cmtt/m/n/10 MOVE[]SNAKE \OT1/cmr/m/n/10 al ac-tua-li-zar el
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
+[]|\OT1/cmr/m/n/10 Espera BIOS con in-ter-va-lo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 892--892
+\OT1/cmr/m/n/10 en mi-cro-se-gun-dos en \OT1/cmtt/m/n/10 CX:DX\OT1/cmr/m/n/10 ;
  []
 
 File: img/logo_episunsa.png Graphic file (type png)
 <use img/logo_episunsa.png>
-Package pdftex.def Info: img/logo_episunsa.png  used on input line 901.
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 894.
 (pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
 File: img/logo_abet.png Graphic file (type png)
 <use img/logo_abet.png>
-Package pdftex.def Info: img/logo_abet.png  used on input line 901.
+Package pdftex.def Info: img/logo_abet.png  used on input line 894.
 (pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
-[19]
-runsystem(latexminted cleantemp  --timestamp 20261110103051 FAD58DE7366495DB4650CFEFAC2FCD61)...executed safely (allowed).
+[29]
 
- (./main.aux
+LaTeX Warning: Reference `tab:herramientas' on page 30 undefined on input line 907.
+
+
+LaTeX Warning: Reference `tab:fichas' on page 30 undefined on input line 908.
+
+
+LaTeX Warning: Reference `tab:servicios' on page 30 undefined on input line 909.
+
+File: img/logo_episunsa.png Graphic file (type png)
+<use img/logo_episunsa.png>
+Package pdftex.def Info: img/logo_episunsa.png  used on input line 917.
+(pdftex.def)             Requested size: 85.35826pt x 25.38835pt.
+File: img/logo_abet.png Graphic file (type png)
+<use img/logo_abet.png>
+Package pdftex.def Info: img/logo_abet.png  used on input line 917.
+(pdftex.def)             Requested size: 34.14322pt x 38.26549pt.
+[30] (./main.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -1121,22 +3032,35 @@ LaTeX Info: Redefining \% on input line 12.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6A5702FD7665A4C688937EF31BF73740;10752.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  BC5325A00F49380999161F80BD1B96E3;10603.
  ) 
 Here is how much of TeX's memory you used:
- 31557 strings out of 467356
- 624256 string characters out of 5418691
- 1421967 words of memory out of 6000000
- 59889 multiletter control sequences out of 15000+600000
- 632791 words of font info for 59 fonts, out of 8000000 for 9000
+ 32650 strings out of 467356
+ 638170 string characters out of 5418691
+ 1541967 words of memory out of 6000000
+ 60306 multiletter control sequences out of 15000+600000
+ 635064 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,17n,104p,854b,2110s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (19 pages, 257257 bytes).
+ 86i,17n,104p,885b,2570s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on main.pdf (30 pages, 332678 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 679 compressed objects within 7 object streams
- 280 named destinations out of 1000 (max. 500000)
- 487 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1339 PDF objects out of 1440 (max. 8388607)
+ 1262 compressed objects within 13 object streams
+ 954 named destinations out of 1000 (max. 500000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

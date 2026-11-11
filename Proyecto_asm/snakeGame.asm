@@ -15,7 +15,7 @@ INIT_GAME PROC
     push dx
     push si
     push di
-    ; Modo texto 80x25 (PRÁCTICA 3: MOV inmediato)
+    ; Modo texto 80x25 (PRACTICA 3: MOV inmediato)
     mov ax, 0003h
     int 10h
     ; Ocultar cursor
@@ -25,23 +25,23 @@ INIT_GAME PROC
     ; Limpiar board (400 bytes a 0)
     mov di, offset board
     mov cx, BOARD_SIZE
-    sub al, al                  ; PRÁCTICA 5: SUB, AL=0
+    sub al, al                  ; PRACTICA 5: SUB, AL=0
 clear_b:
     mov [di], al
     inc di
     loop clear_b
     ; Inicializar cola: 3 segmentos en fila 5, cols 19,20,21
-    ; Índices: 5*40+19=219, 220, 221
+    ; Indices: 5*40+19=219, 220, 221
     mov word ptr [queue], 219
     mov word ptr [queue+2], 220
     mov word ptr [queue+4], 221
-    mov head, 3                 ; próximo índice libre
+    mov head, 3                 ; proximo indice libre
     mov tail, 0
     mov byte ptr dir, 1         ; derecha
     mov byte ptr headRow, 5
     mov byte ptr headCol, 21
     mov score, 0
-    ; Marcar en board (PRÁCTICA 3: MOV directo con [BX/índice])
+    ; Marcar en board (PRACTICA 3: MOV directo con [BX/indice])
     mov byte ptr board[219], 1
     mov byte ptr board[220], 1
     mov byte ptr board[221], 1
@@ -49,7 +49,7 @@ clear_b:
     mov ah, 00h
     int 1Ah
     mov seed, dx
-    xor seed, cx                ; PRÁCTICA 2: XOR para mezclar
+    xor seed, cx                ; PRACTICA 2: XOR para mezclar
     ; Dibujar borde
     call DRAW_BORDER
     ; Dibujar serpiente inicial
@@ -61,7 +61,7 @@ clear_b:
     call DRAW_CELL
     mov bx, 221
     call DRAW_CELL
-    ; Imprimir "Puntaje: "
+    ; Imprimir el mensaje del puntaje
     mov ah, 02h
     mov bh, 0
     mov dh, 0
@@ -218,7 +218,7 @@ DRAW_BORDER ENDP
 ; ------------------------------------------------------------
 READ_KEY PROC
     push bx
-    ; ¿Hay tecla? INT 16h AH=01h: ZF=1 -> no hay
+    ; Hay tecla? INT 16h AH=01h: ZF=1 -> no hay
     mov ah, 01h
     int 16h
     jz rk_nokey
@@ -254,7 +254,7 @@ rk_ar:
     mov bl, 1                   ; derecha
     jmp rk_set
 rk_wasd:
-    ; WASD (mayúsculas y minúsculas)
+    ; WASD (mayusculas y minusculas)
     cmp al, 'w'
     je rk_w
     cmp al, 'W'
@@ -284,10 +284,10 @@ rk_a:
 rk_d:
     mov bl, 1
 rk_set:
-    ; Rechazar giro 180°: nueva == (dir+2) AND 3
+    ; Rechazar giro de 180 grados: nueva == (dir+2) AND 3
     mov al, dir
     add al, 2
-    and al, 3                   ; PRÁCTICA 2: AND 3 acota a 0..3
+    and al, 3                   ; PRACTICA 2: AND 3 acota a 0..3
     cmp bl, al
     je rk_nokey                 ; rechazar
     mov dir, bl
@@ -301,24 +301,24 @@ READ_KEY ENDP
 ; ------------------------------------------------------------
 ; CHECK_COLLISION: Verifica pared o cuerpo en (DH,DL)
 ; Entrada: DH = fila, DL = columna
-; Salida: AL = 0 libre, 1 pared, 2 cuerpo; BX = índice si no es pared
+; Salida: AL = 0 libre, 1 pared, 2 cuerpo; BX = indice si no es pared
 ; Registros modificados: AX, BX (salidas)
 ; ------------------------------------------------------------
 CHECK_COLLISION PROC
-    ; Paredes (comparación sin signo: 0-1 da 255/65535)
+    ; Paredes (comparacion sin signo: 0-1 da 255/65535)
     cmp dh, BOARD_H
-    jae cc_wall                 ; CF=0 y ZF=0 si DH >= BOARD_H
+    jae cc_wall                 ; Salta si DH >= BOARD_H, comparacion sin signo
     cmp dl, BOARD_W
     jae cc_wall
-    ; Índice = fila*40 + col
+    ; Indice = fila*40 + col
     mov al, dh
     xor ah, ah
     mov bl, 40
-    mul bl                      ; PRÁCTICA 5: MUL 8 bits -> AX
+    mul bl                      ; PRACTICA 5: MUL 8 bits -> AX
     mov bl, dl
     xor bh, bh
-    add ax, bx                  ; PRÁCTICA 5: ADD
-    mov bx, ax                  ; BX = índice
+    add ax, bx                  ; PRACTICA 5: ADD
+    mov bx, ax                  ; BX = indice
     cmp byte ptr board[bx], 1
     je cc_body
     xor al, al
@@ -342,7 +342,7 @@ MOVE_SNAKE PROC
     push dx
     push si
     push di
-    ; Nueva posición según dir
+    ; Nueva posicion segun dir
     mov dh, headRow
     mov dl, headCol
     mov al, dir
@@ -366,18 +366,18 @@ ms_chk:
     call CHECK_COLLISION
     cmp al, 0
     je ms_ok
-    mov al, 1                   ; colisión -> game over
+    mov al, 1                   ; colision -> game over
     jmp ms_done
 ms_ok:
-    ; BX = índice nueva cabeza
+    ; BX = indice nueva cabeza
     cmp byte ptr board[bx], 2
     je ms_eat
     ; --- Movimiento normal: borrar cola ---
     mov si, tail
-    shl si, 1                   ; PRÁCTICA 2: SHL para índice de palabra
-    mov di, queue[si]           ; DI = índice de la cola
+    shl si, 1                   ; PRACTICA 2: SHL para indice de palabra
+    mov di, queue[si]           ; DI = indice de la cola
     mov byte ptr board[di], 0
-    ; Dibujar espacio (PRÁCTICA 3: XCHG natural)
+    ; Dibujar espacio (PRACTICA 3: XCHG natural)
     xchg bx, di                 ; BX=cola, DI=nueva cabeza
     mov al, ' '
     mov ah, 07h
@@ -393,7 +393,7 @@ ms_t_ok:
 ms_eat:
     ; --- Comer: crecer ---
     inc score
-    push bx                     ; guardar índice de la nueva cabeza
+    push bx                     ; guardar indice de la nueva cabeza
     push dx                     ; guardar fila/columna de la nueva cabeza
     ; Mostrar puntaje
     mov ah, 02h
@@ -419,7 +419,7 @@ ms_enq:
     jb ms_h_ok
     mov head, 0
 ms_h_ok:
-    ; Actualizar posición de la cabeza
+    ; Actualizar posicion de la cabeza
     mov headRow, dh
     mov headCol, dl
     ; Dibujar nueva cabeza
@@ -447,19 +447,19 @@ SPAWN_FOOD PROC
     push cx
     push dx
     push si
-    mov cx, 1000                ; máximo de intentos
+    mov cx, 1000                ; maximo de intentos
 sf_try:
     ; seed = seed * 25173 + 13849
     mov ax, seed
     mov bx, 25173
-    mul bx                      ; PRÁCTICA 5: MUL 16 bits -> DX:AX
-    add ax, 13849               ; PRÁCTICA 2: ADD/ADC = sumador total
-    adc dx, 0                   ; propagar acarreo a DX (usamos AX)
+    mul bx                      ; PRACTICA 5: MUL 16 bits -> DX:AX
+    add ax, 13849               ; PRACTICA 2: ADD/ADC = sumador total
+    adc dx, 0                   ; conservar el acarreo alto; seed usa solo AX
     mov seed, ax
     ; pos = seed % 400
     xor dx, dx
     mov bx, 400
-    div bx                      ; PRÁCTICA 5: DIV 16 bits -> DX=resto
+    div bx                      ; PRACTICA 5: DIV 16 bits -> DX=resto
     mov si, dx
     cmp byte ptr board[si], 0
     jne sf_next
@@ -482,8 +482,8 @@ sf_done:
 SPAWN_FOOD ENDP
 
 ; ------------------------------------------------------------
-; DRAW_CELL: Dibuja un carácter en la celda BX del tablero
-; Entrada: BX = índice (0..399), AL = carácter, AH = color
+; DRAW_CELL: Dibuja un caracter en la celda BX del tablero
+; Entrada: BX = indice (0..399), AL = caracter, AH = color
 ; Salida: ninguna
 ; Registros modificados: AX, BX, CX, DX (se preservan)
 ; ------------------------------------------------------------
@@ -492,11 +492,11 @@ DRAW_CELL PROC
     push bx
     push cx
     push dx
-    push ax                     ; guardar carácter/color
-    ; fila = índice / 40, col = índice % 40 (DIV 8 bits)
+    push ax                     ; guardar caracter/color
+    ; fila = indice / 40, col = indice % 40 (DIV 8 bits)
     mov ax, bx
     mov cl, 40
-    div cl                      ; PRÁCTICA 5: DIV 8 bits -> AL=fila, AH=col
+    div cl                      ; PRACTICA 5: DIV 8 bits -> AL=fila, AH=col
     add al, 2                   ; fila pantalla = fila + 2
     mov dh, al
     add ah, 20                  ; col pantalla = col + 20
@@ -505,7 +505,7 @@ DRAW_CELL PROC
     mov ah, 02h
     mov bh, 0
     int 10h
-    ; Escribir carácter (AH=09h, BH=0, CX=1)
+    ; Escribir caracter (AH=09h, BH=0, CX=1)
     pop ax                      ; AL=car, AH=color
     mov bl, ah
     mov bh, 0
@@ -520,9 +520,9 @@ DRAW_CELL PROC
 DRAW_CELL ENDP
 
 ; ------------------------------------------------------------
-; PRINT_NUM: Imprime AX en decimal en la posición actual del cursor
-; Entrada: AX = número (0..65535), cursor ya posicionado
-; Salida: imprime dígitos + 3 espacios
+; PRINT_NUM: Imprime AX en decimal en la posicion actual del cursor
+; Entrada: AX = numero (0..65535), cursor ya posicionado
+; Salida: imprime digitos + 3 espacios
 ; Registros modificados: AX, BX, CX, DX (se preservan)
 ; ------------------------------------------------------------
 PRINT_NUM PROC
@@ -531,24 +531,25 @@ PRINT_NUM PROC
     push cx
     push dx
     mov bx, 10
-    xor cx, cx                  ; contador de dígitos
+    xor cx, cx                  ; contador de digitos
     cmp ax, 0
     jne pn_loop
-    push 0                      ; caso especial: número 0
+    xor dx, dx
+    push dx                     ; caso especial: numero 0
     inc cx
     jmp pn_print
 pn_loop:
     xor dx, dx
-    div bx                      ; PRÁCTICA 5: DIV 16 bits -> DX=resto
-    push dx                     ; apilar dígito (PRÁCTICA 5: PUSH)
+    div bx                      ; PRACTICA 5: DIV 16 bits -> DX=resto
+    push dx                     ; apilar digito (PRACTICA 5: PUSH)
     inc cx
     cmp ax, 0
     jne pn_loop
 pn_print:
-    pop dx                      ; PRÁCTICA 5: POP
+    pop dx                      ; PRACTICA 5: POP
     add dl, '0'
     mov ah, 02h
-    int 21h                     ; imprimir dígito
+    int 21h                     ; imprimir digito
     loop pn_print
     ; Limpiar con 3 espacios
     mov cx, 3
@@ -578,7 +579,7 @@ DELAY PROC
     ret
 DELAY ENDP
 ; ------------------------------------------------------------
-; GAME_OVER: Muestra "GAME OVER!" y puntaje, espera tecla
+; GAME_OVER: Muestra el mensaje GAME OVER y el puntaje, espera tecla
 ; Entrada: ninguna
 ; Salida: ninguna (el main loop termina)
 ; Registros modificados: AX, BX, CX, DX (se preservan)
@@ -594,7 +595,7 @@ GAME_OVER PROC
     mov dh, 14
     mov dl, 19
     int 10h
-    ; Imprimir "GAME OVER! Puntaje: "
+    ; Imprimir el mensaje GAME OVER y el puntaje
     mov dx, offset msgGameOver
     mov ah, 09h
     int 21h
@@ -645,15 +646,14 @@ BOARD_H     EQU 10
 BOARD_SIZE  EQU 400
 
 board       DB 400 dup(0)       ; 0=libre, 1=serpiente, 2=comida
-queue       DW 400 dup(0)       ; índices de las celdas de la serpiente
-head        DW 0                ; próximo índice libre en queue
-tail        DW 0                ; índice de la cola en queue
+queue       DW 400 dup(0)       ; indices de las celdas de la serpiente
+head        DW 0                ; proximo indice libre en queue
+tail        DW 0                ; indice de la cola en queue
 dir         DB 1                ; 0=arriba, 1=derecha, 2=abajo, 3=izquierda
 headRow     DB 5
 headCol     DB 21
 score       DW 0
 seed        DW 0
-delayTicks  DB 2
 
 msgScore    DB 'Puntaje: $'
 msgGameOver DB 'GAME OVER! Puntaje: $'

@@ -1,63 +1,63 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Actividades}{4}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Descripción de la actividad}{4}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Objetivos}{4}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Entorno de desarrollo y herramientas}{4}{subsection.1.3}%
-\contentsline {subsection}{\numberline {1.4}Alcance y entregables}{4}{subsection.1.4}%
-\contentsline {section}{\numberline {2}Marco teórico}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Arquitectura 8086 y segmentación}{5}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Modelo de memoria del formato COM}{5}{subsection.2.2}%
-\contentsline {paragraph}{Comparación con signo y sin signo.}{5}{section*.7}%
-\contentsline {subsection}{\numberline {2.3}Modo texto 80x25 y servicios BIOS (INT 10h)}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Lectura de teclado (INT 16h) y reloj del BIOS (INT 1Ah)}{5}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Servicios DOS (INT 21h)}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Cola circular y direccionamiento indirecto}{6}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Diseño del juego}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Reglas y controles}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Representación del tablero}{7}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Estructuras de datos}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Procedimientos y sus contratos}{7}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Desarrollo e implementación}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Altas y bajas del diseño}{8}{subsection.4.1}%
-\contentsline {paragraph}{Altas.}{8}{section*.10}%
-\contentsline {paragraph}{Bajas.}{8}{section*.11}%
-\contentsline {subsection}{\numberline {4.2}Decisiones de implementación destacadas}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Tabla de rastreo: Práctica del curso a código}{9}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Funcionamiento}{10}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Bucle principal}{10}{subsection.5.1}%
+\contentsline {section}{\numberline {1}Actividades}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Descripción de la actividad}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Objetivos}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Entorno de desarrollo y herramientas}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Alcance y entregables}{3}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Marco teórico}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Arquitectura 8086 y segmentación}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Modelo de memoria del formato COM}{4}{subsection.2.2}%
+\contentsline {paragraph}{Comparación con signo y sin signo.}{4}{section*.7}%
+\contentsline {subsection}{\numberline {2.3}Modo texto 80x25 y servicios BIOS (INT 10h)}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Lectura de teclado y temporización}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Servicios DOS (INT 21h)}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Cola circular y direccionamiento indirecto}{5}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Diseño del juego}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Reglas y controles}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Representación del tablero}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Estructuras de datos}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Procedimientos y sus contratos}{6}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Desarrollo e implementación}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Altas y bajas del diseño}{7}{subsection.4.1}%
+\contentsline {paragraph}{Altas.}{7}{section*.10}%
+\contentsline {paragraph}{Bajas.}{7}{section*.11}%
+\contentsline {subsection}{\numberline {4.2}Decisiones de implementación destacadas}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Tabla de rastreo: Práctica del curso a código}{8}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Funcionamiento}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Bucle principal}{9}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Flujo detallado de una tecla}{10}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Flujo detallado de un movimiento}{11}{subsection.5.3}%
-\contentsline {paragraph}{Micro-traza: presiono \texttt {W} yendo a la derecha.}{11}{section*.12}%
+\contentsline {subsection}{\numberline {5.3}Flujo detallado de un movimiento}{10}{subsection.5.3}%
+\contentsline {paragraph}{Micro-traza: presiono \texttt {W} yendo a la derecha.}{10}{section*.12}%
 \contentsline {subsection}{\numberline {5.4}Flujo detallado de ``comer''}{11}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Flujo detallado de un choque}{12}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Pseudocódigo}{12}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Bucle principal}{12}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}INIT\_GAME}{12}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}DRAW\_BORDER}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {5.5}Flujo detallado de un choque}{11}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Pseudocódigo}{11}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Bucle principal}{11}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}INIT\_GAME}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}DRAW\_BORDER}{11}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}READ\_KEY}{12}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}CHECK\_COLLISION}{13}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}MOVE\_SNAKE}{13}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.5}CHECK\_COLLISION}{12}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}MOVE\_SNAKE}{12}{subsection.6.6}%
 \contentsline {subsection}{\numberline {6.7}SPAWN\_FOOD}{13}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}DRAW\_CELL}{14}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}PRINT\_NUM}{14}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}DELAY}{14}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.8}DRAW\_CELL}{13}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}PRINT\_NUM}{13}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}DELAY}{13}{subsection.6.10}%
 \contentsline {subsection}{\numberline {6.11}GAME\_OVER}{14}{subsection.6.11}%
 \contentsline {subsection}{\numberline {6.12}Pseudocódigo del programa completo}{14}{subsection.6.12}%
-\contentsline {section}{\numberline {7}Análisis de rendimiento}{15}{section.7}%
-\contentsline {subsection}{\numberline {7.1}¿Por qué el juego es ``lento''?}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Presupuesto de ciclos por fotograma}{15}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Cuellos de botella identificados}{15}{subsection.7.3}%
+\contentsline {section}{\numberline {7}Análisis de rendimiento}{14}{section.7}%
+\contentsline {subsection}{\numberline {7.1}¿Por qué el juego es ``lento''?}{14}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Costo por fotograma}{14}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Cuellos de botella y latencia de entrada}{14}{subsection.7.3}%
 \contentsline {section}{\numberline {8}Limitaciones y consideraciones}{15}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Limitaciones funcionales del juego}{15}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Limitaciones técnicas del código}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.2}Limitaciones técnicas del código}{15}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Limitaciones de portabilidad y entorno}{16}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Cosas a tener en cuenta al exponer}{16}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Posibles mejoras futuras}{17}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.5}Posibles mejoras futuras}{16}{subsection.8.5}%
 \contentsline {section}{\numberline {9}Pruebas y validación}{17}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Lista de verificación}{17}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Procedimiento de prueba recomendado}{17}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Anexos}{18}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Código fuente completo (snake.asm)}{18}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Tabla de variables y estructuras}{18}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Tabla de servicios BIOS/DOS usados}{18}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Referencias}{19}{subsection.10.4}%
+\contentsline {section}{\numberline {10}Anexos}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Código fuente completo (snakeGame.asm)}{17}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Tabla de variables y estructuras}{29}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Tabla de servicios BIOS/DOS usados}{29}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Referencias}{30}{subsection.10.4}%
